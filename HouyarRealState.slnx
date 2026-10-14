@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Application/">
+    <Project Path="src/HouyarRealState.Application/HouyarRealState.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Domain/">
+    <Project Path="src/HouyarRealState.Domain/HouyarRealState.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="src/HouyarRealState.Infrastructure/HouyarRealState.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Presentation/">
+    <Project Path="src/HouyarRealState.Presentation/HouyarRealState.Presentation.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,12 @@
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\bin\Debug\net10.0\HouyarRealState.Infrastructure.deps.json
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\bin\Debug\net10.0\HouyarRealState.Infrastructure.dll
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\bin\Debug\net10.0\HouyarRealState.Infrastructure.pdb
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\HouyarRealState.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\HouyarRealState.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\HouyarRealState.Infrastructure.AssemblyInfo.cs
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\HouyarRealState.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\HouyarRealState.Infrastructure.dll
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\refint\HouyarRealState.Infrastructure.dll
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\HouyarRealState.Infrastructure.pdb
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\ref\HouyarRealState.Infrastructure.dll
+C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Infrastructure\obj\Debug\net10.0\HouyarRe.070E00D5.Up2Date

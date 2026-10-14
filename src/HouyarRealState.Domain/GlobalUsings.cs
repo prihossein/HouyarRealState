@@ -1,0 +1,1 @@
+﻿global using HouyarRealState.Domain.Common;
