@@ -11,3 +11,17 @@ C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Domain\obj\Deb
 C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.pdb
 C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\ref\HouyarRealState.Domain.dll
 C:\Users\Hossein\source\repos\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRe.ABFF0496.Up2Date
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\bin\Debug\net10.0\HouyarRealState.Domain.deps.json
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\bin\Debug\net10.0\HouyarRealState.Domain.dll
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\bin\Debug\net10.0\HouyarRealState.Domain.pdb
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.csproj.AssemblyReference.cache
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.AssemblyInfoInputs.cache
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.AssemblyInfo.cs
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.sourcelink.json
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.dll
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\refint\HouyarRealState.Domain.dll
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRealState.Domain.pdb
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\ref\HouyarRealState.Domain.dll
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Domain\obj\Debug\net10.0\HouyarRe.ABFF0496.Up2Date

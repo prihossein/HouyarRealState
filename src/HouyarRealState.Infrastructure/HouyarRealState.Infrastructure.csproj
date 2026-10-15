@@ -6,4 +6,31 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Handlers\" />
+    <Folder Include="Persistence\Migrations\" />
+    <Folder Include="Persistence\SeedData\" />
+  </ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="IPE.SmsIr" Version="1.2.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.13" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.13" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.13" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.13" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.13">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+		<PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.13" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <ProjectReference Include="..\HouyarRealState.Application\HouyarRealState.Application.csproj" />
+	  <ProjectReference Include="..\HouyarRealState.Domain\HouyarRealState.Domain.csproj" />
+	</ItemGroup>
+
 </Project>
