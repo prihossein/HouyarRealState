@@ -1,0 +1,11 @@
+﻿input[type="number"],
+input[type="password"],
+input[type="email"] {
+    text-align: left !important;
+    direction: ltr;
+}
+
+.left-text-align {
+    text-align: left !important;
+    direction: ltr;
+}

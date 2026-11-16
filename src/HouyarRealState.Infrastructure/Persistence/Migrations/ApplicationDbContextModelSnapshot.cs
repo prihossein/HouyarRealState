@@ -34,7 +34,6 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                         .HasColumnType("nvarchar(300)");
 
                     b.Property<Guid>("AspNetUserId")
-                        .HasMaxLength(450)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("BlogCode")
@@ -1508,6 +1507,52 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Footers", "hou");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3f2504e0-4f89-41d3-9a0c-0305e82c0001"),
+                            Address = "ایران، فارس، شیراز، دینکان، مشاور املاک هویار",
+                            Email = "houyarrealstate@gmail.com",
+                            IsDelete = false,
+                            LanguageId = new Guid("3f2504e0-4f89-41d3-9a0c-0305e82c3301"),
+                            Mobile = "09171022924",
+                            PhoneNumber = "09171022924",
+                            ShortDescription = "مشاور املاک هویار، همراه شما در مسیر خرید، فروش و اجاره ملک. ما با هدف ارائه خدمات حرفه‌ای در حوزه املاک، تلاش می‌کنیم تجربه‌ای مطمئن و آسان برای انتخاب خانه، آپارتمان و سرمایه‌گذاری ملکی فراهم کنیم. هویار با ارائه اطلاعات دقیق و راهنمایی تخصصی، در تمام مراحل انتخاب و انجام معاملات ملکی در کنار شماست."
+                        },
+                        new
+                        {
+                            Id = new Guid("4f2504e0-4f89-41d3-9a0c-0305e82c0002"),
+                            Address = "Dinkān, Shiraz, Fars, Iran — Houyar Real Estate",
+                            Email = "houyarrealstate@gmail.com",
+                            IsDelete = false,
+                            LanguageId = new Guid("4f2504e0-4f89-41d3-9a0c-0305e82c3302"),
+                            Mobile = "09171022924",
+                            PhoneNumber = "09171022924",
+                            ShortDescription = "Houyar Real Estate is your trusted partner for buying, selling, and renting properties. We strive to provide professional real estate services and make finding a home, apartment, or property investment an easy and reliable experience. With accurate information and expert guidance, we support you throughout every stage of your property search and real estate transactions."
+                        },
+                        new
+                        {
+                            Id = new Guid("5f2504e0-4f89-41d3-9a0c-0305e82c0003"),
+                            Address = "دينكان، شيراز، محافظة فارس، إيران — وكالة هويار العقارية",
+                            Email = "houyarrealstate@gmail.com",
+                            IsDelete = false,
+                            LanguageId = new Guid("5f2504e0-4f89-41d3-9a0c-0305e82c3303"),
+                            Mobile = "09171022924",
+                            PhoneNumber = "09171022924",
+                            ShortDescription = "وكالة هويار العقارية شريككم الموثوق في شراء العقارات وبيعها وتأجيرها. نسعى إلى تقديم خدمات عقارية احترافية تساعدكم على العثور على المنزل أو الشقة المناسبة والاستثمار العقاري بكل سهولة واطمئنان. ومن خلال توفير معلومات دقيقة وإرشادات متخصصة، نرافقكم في جميع مراحل البحث عن العقار وإتمام المعاملات العقارية."
+                        },
+                        new
+                        {
+                            Id = new Guid("6f2504e0-4f89-41d3-9a0c-0305e82c0004"),
+                            Address = "Dinkan, Şiraz, Fars Eyaleti, İran — Houyar Gayrimenkul",
+                            Email = "houyarrealstate@gmail.com",
+                            IsDelete = false,
+                            LanguageId = new Guid("6f2504e0-4f89-41d3-9a0c-0305e82c3304"),
+                            Mobile = "09171022924",
+                            PhoneNumber = "09171022924",
+                            ShortDescription = "Houyar Gayrimenkul, gayrimenkul alım, satım ve kiralama süreçlerinde güvenilir çözüm ortağınızdır. Ev, daire veya gayrimenkul yatırımı arayışınızı kolaylaştırmak için profesyonel hizmetler sunmayı amaçlıyoruz. Doğru bilgiler ve uzman rehberliğiyle gayrimenkul arayışınızın ve işlemlerinizin her aşamasında yanınızdayız."
+                        });
                 });
 
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Settings.Footer.FooterMenu", b =>
@@ -1625,6 +1670,60 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                         .HasFilter("[IsDefault] = 1");
 
                     b.ToTable("Languages", "hou");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3f2504e0-4f89-41d3-9a0c-0305e82c3301"),
+                            Code = "fa",
+                            Culture = "fa-IR",
+                            Flag = "fa.png",
+                            IsActive = true,
+                            IsDefault = true,
+                            IsDelete = false,
+                            IsRtl = true,
+                            Name = "Persian",
+                            NativeName = "فارسی"
+                        },
+                        new
+                        {
+                            Id = new Guid("4f2504e0-4f89-41d3-9a0c-0305e82c3302"),
+                            Code = "en",
+                            Culture = "en-US",
+                            Flag = "en.png",
+                            IsActive = true,
+                            IsDefault = false,
+                            IsDelete = false,
+                            IsRtl = false,
+                            Name = "English",
+                            NativeName = "English"
+                        },
+                        new
+                        {
+                            Id = new Guid("5f2504e0-4f89-41d3-9a0c-0305e82c3303"),
+                            Code = "ar",
+                            Culture = "ar-SA",
+                            Flag = "ar.png",
+                            IsActive = true,
+                            IsDefault = false,
+                            IsDelete = false,
+                            IsRtl = true,
+                            Name = "Arabic",
+                            NativeName = "العربية"
+                        },
+                        new
+                        {
+                            Id = new Guid("6f2504e0-4f89-41d3-9a0c-0305e82c3304"),
+                            Code = "tr",
+                            Culture = "tr-TR",
+                            Flag = "tr.png",
+                            IsActive = true,
+                            IsDefault = false,
+                            IsDelete = false,
+                            IsRtl = false,
+                            Name = "Turkish",
+                            NativeName = "Türkçe"
+                        });
                 });
 
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Settings.SocialNetwork", b =>
@@ -1707,6 +1806,40 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("TopBars", "hou");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3f2504e0-4f89-41d3-9a0c-0305e82c3201"),
+                            Address = "ایران، شیراز، خیابان شهید دینکانی، مشاور املاک هویار",
+                            Email = "houyar@ifo.com",
+                            IsDelete = false,
+                            LanguageId = new Guid("3f2504e0-4f89-41d3-9a0c-0305e82c3301")
+                        },
+                        new
+                        {
+                            Id = new Guid("4f2504e0-4f89-41d3-9a0c-0305e82c3202"),
+                            Address = "Houyar Real Estate Agency, Shahid Dinkani Street, Shiraz, Iran",
+                            Email = "houyar@ifo.com",
+                            IsDelete = false,
+                            LanguageId = new Guid("4f2504e0-4f89-41d3-9a0c-0305e82c3302")
+                        },
+                        new
+                        {
+                            Id = new Guid("5f2504e0-4f89-41d3-9a0c-0305e82c3203"),
+                            Address = "وكالة هويار للعقارات، شارع الشهيد دينكاني، شيراز، إيران",
+                            Email = "houyar@ifo.com",
+                            IsDelete = false,
+                            LanguageId = new Guid("5f2504e0-4f89-41d3-9a0c-0305e82c3303")
+                        },
+                        new
+                        {
+                            Id = new Guid("6f2504e0-4f89-41d3-9a0c-0305e82c3204"),
+                            Address = "Houyar Emlak Danışmanlığı, Shahid Dinkani Caddesi, Şiraz, İran",
+                            Email = "houyar@ifo.com",
+                            IsDelete = false,
+                            LanguageId = new Guid("6f2504e0-4f89-41d3-9a0c-0305e82c3304")
+                        });
                 });
 
             modelBuilder.Entity("HouyarRealState.Domain.Entities.User.ApplicationUser", b =>
@@ -1966,7 +2099,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                     b.HasOne("HouyarRealState.Domain.Entities.Settings.Language", "Language")
                         .WithMany("Blogs")
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Author");
@@ -1979,7 +2112,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                     b.HasOne("HouyarRealState.Domain.Entities.Settings.Language", "Language")
                         .WithMany("BlogCategories")
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("HouyarRealState.Domain.Entities.Article.BlogCategory", null)
@@ -2068,7 +2201,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                     b.HasOne("HouyarRealState.Domain.Entities.Settings.Language", "Language")
                         .WithMany("HomePages")
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Language");
@@ -2122,7 +2255,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                     b.HasOne("HouyarRealState.Domain.Entities.Settings.Language", "Language")
                         .WithMany("Footers")
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Language");

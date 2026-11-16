@@ -68,30 +68,83 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Settings
             builder.HasMany(x => x.Blogs)
                 .WithOne(x => x.Language)
                 .HasForeignKey(x => x.LanguageId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
 
             // Language -> BlogCategories
             builder.HasMany(x => x.BlogCategories)
                 .WithOne(x => x.Language)
                 .HasForeignKey(x => x.LanguageId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
 
             // Language -> HomePages
             builder.HasMany(x => x.HomePages)
                 .WithOne(x => x.Language)
                 .HasForeignKey(x => x.LanguageId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
 
             // Language -> Footers
             builder.HasMany(x => x.Footers)
                 .WithOne(x => x.Language)
                 .HasForeignKey(x => x.LanguageId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
 
             // Only one default language
             builder.HasIndex(x => x.IsDefault)
                 .IsUnique()
                 .HasFilter("[IsDefault] = 1");
+
+            #region Seed Data
+            builder.HasData(
+                new Language
+                {
+                    Id = Guid.Parse("3F2504E0-4F89-41D3-9A0C-0305E82C3301"),
+                    Code = "fa",
+                    Culture = "fa-IR",
+                    IsRtl = true,
+                    Name = "Persian",
+                    NativeName = "فارسی",
+                    IsDefault = true,
+                    IsActive = true,
+                    Flag = "fa.png",
+                },
+                new Language
+                {
+                    Id = Guid.Parse("4F2504E0-4F89-41D3-9A0C-0305E82C3302"),
+                    Code = "en",
+                    Culture = "en-US",
+                    IsRtl = false,
+                    Name = "English",
+                    NativeName = "English",
+                    IsDefault = false,
+                    IsActive = true,
+                    Flag = "en.png",
+                },
+                new Language
+                {
+                    Id = Guid.Parse("5F2504E0-4F89-41D3-9A0C-0305E82C3303"),
+                    Code = "ar",
+                    Culture = "ar-SA",
+                    IsRtl = true,
+                    Name = "Arabic",
+                    NativeName = "العربية",
+                    IsDefault = false,
+                    IsActive = true,
+                    Flag = "ar.png",
+                },
+                new Language
+                {
+                    Id = Guid.Parse("6F2504E0-4F89-41D3-9A0C-0305E82C3304"),
+                    Code = "tr",
+                    Culture = "tr-TR",
+                    IsRtl = false,
+                    Name = "Turkish",
+                    NativeName = "Türkçe",
+                    IsDefault = false,
+                    IsActive = true,
+                    Flag = "tr.png",
+                }
+            );
+            #endregion
         }
     }
 }

@@ -1,0 +1,33 @@
+﻿@{
+    var languageCulture = (string)ViewData["LanguageCulture"];
+}
+
+@if (!string.IsNullOrWhiteSpace(languageCulture))
+{
+    switch (languageCulture)
+    {
+        case LanguageCultures.Persian:
+        <partial name="Partials\Footers\_FooterPersian" />
+            break;
+
+        case LanguageCultures.English:
+            <partial name="Partials\Footers\_FooterEnglish" />
+            break;
+
+        case LanguageCultures.Arabic:
+            <partial name="Partials\Footers\_FooterArabic" />
+            break;
+
+            
+        case LanguageCultures.Turkish:
+            <partial name="Partials\Footers\_FooterTurkish" />
+            break;
+
+        default:
+            break;
+    }
+}
+
+
+
+       

@@ -56,8 +56,11 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\quarter\css\responsive.css
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\quarter\fonts\flaticon.svg
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\js\login.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\lib\jquery\dist\jquery.slim.min.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\quarter\js\main.js
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\css\custom.css
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\js\index.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\quarter\css\plugins.css
@@ -76,8 +79,11 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\lib\jquery\dist\jquery.slim.min.map
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\css\custom.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\js\index.js
+wwwroot\js\login.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\LICENSE
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css

@@ -63,8 +63,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/Partials/_Footer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Gb290ZXIuY3NodG1s
+[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/Partials/Footers/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEZvb3RlcnNcX0Zvb3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/Partials/Footers/_FooterArabic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEZvb3RlcnNcX0Zvb3RlckFyYWJpYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/Partials/Footers/_FooterEnglish.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEZvb3RlcnNcX0Zvb3RlckVuZ2xpc2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/Partials/Footers/_FooterPersian.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEZvb3RlcnNcX0Zvb3RlclBlcnNpYW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/Partials/Footers/_FooterTurkish.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEZvb3RlcnNcX0Zvb3RlclR1cmtpc2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/Partials/_TopBar.cshtml]

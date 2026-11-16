@@ -21,12 +21,12 @@
 
             app.MapControllerRoute(
     name: "areas",
-    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{languageCulture?}");
 
 
             app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{languageCulture?}");
 
         }
     }

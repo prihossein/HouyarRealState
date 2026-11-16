@@ -30,6 +30,9 @@ namespace HouyarRealState.Infrastructure
             services.AddHttpClient();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICacheManagerService, CacheManagerService>();
+            services.AddTransient<ILanguageRepository, LanguageRepository>();
+            services.AddTransient<IFooterRepository, FooterRepository>();
+            services.AddTransient<ILanguageService, LanguageService>();
             services.AddMemoryCache();
             services.AddMediatR(x => x.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
                 .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviours<,>))

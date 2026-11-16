@@ -1,4 +1,12 @@
-﻿<div class="ltn__header-top-area top-area-color-white">
+﻿
+@inject ILanguageRepository _languageRepository
+
+@{
+    var languages = await _languageRepository.GetAllLanguagesAsync();
+}
+
+
+<div class="ltn__header-top-area top-area-color-white">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
@@ -20,12 +28,10 @@
                                         <li>
                                             <a href="#" class="dropdown-toggle"><span class="active-currency">زبان</span></a>
                                             <ul>
-                                                <li><a href="#">عربی</a></li>
-                                                <li><a href="#">انگلیسی</a></li>
-                                                <li><a href="#">چینی</a></li>
-                                                <li><a href="#">فرانسوی</a></li>
-                                                <li><a href="#">آلمانی</a></li>
-                                                <li><a href="#">هندی</a></li>
+                                                @foreach (var language in languages)
+                                                {
+                                                    <li><a href="javascript:void(0)">@language.NativeName</a></li>
+                                                }
                                             </ul>
                                         </li>
                                     </ul>
