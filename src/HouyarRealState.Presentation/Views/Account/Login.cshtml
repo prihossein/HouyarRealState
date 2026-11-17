@@ -1,104 +1,90 @@
 ﻿@{
-    ViewData["Title"] = "ورود / ثبت نام";
+    Layout = null;
 }
 
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Html.Raw("ورود به سیستم")</title>
+    <link rel="stylesheet" type="text/css" href="/iofrm/css/farsi-font.css">
+    <link rel="stylesheet" type="text/css" href="/iofrm/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/iofrm/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/iofrm/css/iofrm-style-1.css">
+    <link rel="stylesheet" type="text/css" href="/iofrm/css/iofrm-theme17.css">
+    <link href="/css/customlogin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
-@section _Styles{
     <link href="/plugins/toastr/toastr.min.css" rel="stylesheet" />
-}
-
-<!-- BREADCRUMB AREA START -->
-<div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image " data-bg="img/bg/14.jpg">
-    <div class="container">
+    <link href="/plugins/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="form-body without-side">
+        <div class="website-logo">
+            <a href="/">
+                <div class="logo">
+                    <img class="logo-size" src="/iofrm/images/logo-light.svg" alt="">
+                </div>
+            </a>
+        </div>
         <div class="row">
-            <div class="col-lg-12">
-                <div class="ltn__breadcrumb-inner">
-                    <h1 class="page-title">ورود</h1>
-                    <div class="ltn__breadcrumb-list">
-                        <ul>
-                            <li><a href="/"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> صفحه اصلی</a></li>
-                            <li>ورود</li>
-                        </ul>
+            <div class="img-holder">
+                <div class="bg" style="background-image: url('/img/gif/@ViewBag.RandomBackground');"></div>
+                <div class="info-holder">
+                    <img src="/iofrm/images/graphic3.svg" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3 class="form-items-title">ورود به سیستم</h3>
+                        <form id="frmLogin" method="post">
+                            <input name="returnUrl" type="hidden" value="@ViewBag.ReturnUrl">
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <i class="zmdi zmdi-smartphone-android"></i>
+                                    </span>
+                                </div>
+
+                                <input class="form-control" id="UserName" name="UserName" autocomplete="off" type="text" placeholder="نام کاربری">
+
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <i class="zmdi zmdi-eye"></i>
+                                        <i class="zmdi zmdi-eye-off hidden"></i>
+                                    </span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="رمز عبور" name="Password" id="Password" aria-label="Password" aria-describedby="Password">
+                            </div>
+
+                            <div class="form-button">
+
+                                <button id="submitWating" disabled class="ibtn submitWating hidden">
+                                    <span>
+                                        <i class='fa fa-spinner fa-spin'></i>
+                                    </span>
+                                    در حال احراز هویت کاربر
+                                </button>
+                                <button id="submit" type="submit" class="ibtn submit">ورود</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- BREADCRUMB AREA END -->
-<!-- LOGIN AREA START -->
-<div class="ltn__login-area pb-65">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title-area text-center">
-                    <h1 class="section-title">ورود به حساب کاربری <br>در املاک هویار</h1>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="account-login-inner">
-                    <form action="#" class="ltn__form-box contact-form-box">
-
-                        <input type="text" name="Username" id="Password" class="left-text-align" placeholder="نام کاربری">
-                        <input type="password" name="Password" id="Password" placeholder="کلمه عبور">
-
-                        <div class="btn-wrapper mt-0">
-                            <button class="theme-btn-1 btn btn-block" type="submit">ورود</button>
-                        </div>
-
-                        <div class="go-to-btn mt-20">
-                            <a asp-action="ForgotPassword" asp-controller="Account"><small>رمزتان را فراموش کردید ؟</small></a>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="account-create text-center pt-50">
-                    <h4>اکانت ندارید ؟</h4>
-                    <p>
-                        موارد را به لیست علاقه مندی های خود اضافه کنید و توصیه های شخصی دریافت کنید <br>
-                        جهت بررسی سریعتر ثبت سفارشات خود را پیگیری کنید
-                    </p>
-                    <div class="btn-wrapper">
-                        <a href="javascript:void(0)" class="theme-btn-1 btn black-btn">ثبت نام</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- LOGIN AREA END -->
-
-
-<div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bg="img/1.jpg--">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg text-center---">
-                    <div class="coll-to-info text-color-white">
-                        <h1>به دنبال خانه رویایی هستید ؟</h1>
-                        <p>ما می توانیم به شما کمک کنیم تا رویای خود را برای یک خانه جدید محقق کنید</p>
-                    </div>
-                    <div class="btn-wrapper">
-                        <a class="btn btn-effect-3 btn-white" href="contact.html">مشاهده ملک های بیشتر <i class="icon-next"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-@section _Scripts {
-    @if (ViewData["ChangeUrl"] is string changeUrl)
-    {
-        <script>
-            window.history.replaceState(null, '', '@changeUrl');
-        </script>
-    }
-    <script src="/plugins/toastr/toastr.min.js"></script>
+    <script src="/iofrm/js/jquery.min.js"></script>
+    <script src="/iofrm/js/popper.min.js"></script>
+    <script src="/iofrm/js/bootstrap.min.js"></script>
+    <script src="/iofrm/js/main.js"></script>
     <script src="/js/login.js"></script>
-}
+    <script src="/plugins/toastr/toastr.min.js"></script>
+
+</body>
+</html>

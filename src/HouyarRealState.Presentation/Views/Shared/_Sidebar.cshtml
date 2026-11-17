@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using HouyarRealState.Domain.Entities.User
+@inject UserManager<ApplicationUser> _userManager
+
+@{
+    var user = await _userManager.FindByNameAsync(User.Identity?.Name);
+}
+
+<div class="deznav">
+    <div class="deznav-scroll">
+        <div class="main-profile">
+
+            <div class="image-bx">
+
+                <img src="/zenix/images/Untitled-1.jpg" loading="lazy" alt="@Html.Raw($"{user.FullName}")" />
+
+                <a asp-area="Admin" asp-controller="UserManager" asp-action="UserManager" title="@Html.Raw("مدیریت کاربران")"><i class="fa fa-cog" aria-hidden="true"></i></a>
+            </div>
+
+            <h5 class="name">@Html.Raw(user.FullName)</h5>
+
+            @if (!string.IsNullOrWhiteSpace(user.UserName))
+            {
+                <p class="email">@Html.Raw($"<strong>کد کاربر:</strong> {user.Code}")</p>
+            }
+
+        </div>
+        <ul class="metismenu" id="menu">
+            <li class="nav-label first">@Html.Raw("منوی اصلی")</li>
+
+            <li>
+                <a asp-controller="Home" asp-action="Index" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-144-layout"></i>
+                    <span class="nav-text">@Html.Raw("داشبورد")</span>
+                </a>
+            </li>
+
+
+            <li>
+                <a asp-controller="Property" asp-action="Properties" class="ai-icon" aria-expanded="false">
+                    <i class="fa fa-users"></i>
+                    <span class="nav-text">@Html.Raw("ملک‌ها")</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>

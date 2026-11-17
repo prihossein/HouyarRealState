@@ -1,10 +1,4 @@
 ﻿
-@inject ILanguageRepository _languageRepository
-
-@{
-    var languages = await _languageRepository.GetAllLanguagesAsync();
-}
-
 
 <div class="ltn__header-top-area top-area-color-white">
     <div class="container">
@@ -21,22 +15,7 @@
                 <div class="top-bar-right text-right">
                     <div class="ltn__top-bar-menu">
                         <ul>
-                            <li>
-                                <!-- ltn__language-menu -->
-                                <div class="ltn__drop-menu ltn__currency-menu ltn__language-menu">
-                                    <ul>
-                                        <li>
-                                            <a href="#" class="dropdown-toggle"><span class="active-currency">زبان</span></a>
-                                            <ul>
-                                                @foreach (var language in languages)
-                                                {
-                                                    <li><a href="javascript:void(0)">@language.NativeName</a></li>
-                                                }
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+
                             <li>
                                 <!-- ltn__social-media -->
                                 <div class="ltn__social-media">

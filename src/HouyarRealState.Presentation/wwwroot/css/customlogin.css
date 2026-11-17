@@ -1,0 +1,95 @@
+﻿.required-label::after {
+    content: " *";
+    color: #b94a48;
+}
+
+.field-validation-error {
+    color: #d9534f;
+}
+
+.hidden {
+    display: none !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    text-align:left;
+    direction:ltr;
+}
+
+input[type=text] {
+    -moz-appearance: textfield;
+    text-align: left;
+    direction: ltr;
+}
+
+    input[type=number]::placeholder {
+        text-align: right;
+    }
+
+input[type=password] {
+    -moz-appearance: textfield;
+    text-align: left;
+    direction: ltr;
+}
+
+    input[type=password]::placeholder{
+        text-align:right;
+    }
+
+
+    .form-content h3 {
+        text-align: center;
+    }
+
+.form-body.without-side .form-content .form-button .ibtn{
+    width:100%;
+    height:2.5rem;
+}
+
+
+#submitWating {
+    width: 90%;
+    height: 2.5rem;
+
+}
+
+.form-body.without-side .form-content .form-items form {
+    margin-top: 1.5rem;
+}
+
+.form-body.without-side .form-content .form-items {
+    background-color: #ffffff63;
+}
+
+.form-content .form-items{
+    max-width:400px;
+}
+
+.display-none{
+    display:none!important;
+}
+
+#basic-addon1 {
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+}
+
+.input-group input {
+    border-bottom-left-radius: 6px !important;
+    border-top-left-radius: 6px !important;
+
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.zmdi-eye:hover, .zmdi-eye-off:hover {
+    cursor: pointer;
+}

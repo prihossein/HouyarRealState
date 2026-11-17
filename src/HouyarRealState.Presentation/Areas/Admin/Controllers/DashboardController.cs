@@ -9,7 +9,9 @@ namespace HouyarRealState.Presentation.Areas.Admin.Controllers
     [Area("Admin"), Authorize(Roles = $"{UserRoleNames.Owner}, {UserRoleNames.Administrator}")]
     public class DashboardController : Controller
     {
-        public IActionResult Index()
+
+        [Route("/Dashboard")]
+        public IActionResult Dashboard()
         {
             return View();
         }

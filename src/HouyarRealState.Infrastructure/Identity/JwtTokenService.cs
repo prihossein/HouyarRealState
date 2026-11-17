@@ -3,9 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using HouyarRealState.Application.DTOs.Identity;
 using HouyarRealState.Domain.Entities.User;
-using HouyarRealState.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -26,7 +24,7 @@ namespace HouyarRealState.Infrastructure.Identity
 
         public async Task<JwtResultDTO> GenerateTokenAsync(GetTokenDTO dto)
         {
-            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Mobile == dto.Mobile);
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == dto.UserName);
 
             if (user == null)
             {

@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\UserPanel\" />
+    <Folder Include="wwwroot\Plugins\icomoon\icomoon\" />
   </ItemGroup>
 
   <ItemGroup>

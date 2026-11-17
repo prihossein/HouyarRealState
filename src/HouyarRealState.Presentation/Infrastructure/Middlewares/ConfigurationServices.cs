@@ -28,12 +28,9 @@ namespace HouyarRealState.Infrastructure.Middlewares
                     //options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
                 });
 
-
-
             services.AddSession();
 
             services.AddEndpointsApiExplorer();
-
 
             return services;
         }

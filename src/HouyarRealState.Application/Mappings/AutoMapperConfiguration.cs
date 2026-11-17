@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
-using HouyarRealState.Application.DTOs.Common;
+﻿using AutoMapper;
 using HouyarRealState.Application.DTOs.Settings;
-using HouyarRealState.Domain.Entities.Settings;
 
 namespace HouyarRealState.Application.Mappings
 {
@@ -13,7 +8,7 @@ namespace HouyarRealState.Application.Mappings
 
         public AutoMapperConfiguration()
         {
-            CreateMap<Language, LanguageDTO>().ReverseMap();
+           
 
         }
 

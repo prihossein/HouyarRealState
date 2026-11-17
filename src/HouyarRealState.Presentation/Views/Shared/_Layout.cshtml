@@ -1,703 +1,663 @@
-﻿<!doctype html>
-<html class="no-js" lang="zxx">
-
+﻿<!DOCTYPE html>
+<html lang="fa">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@ViewData["Title"]</title>
-    <meta name="robots" content="noindex, follow">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Place favicon.png in the root directory -->
-    <link rel="shortcut icon" href="/quarter/img/favicon.png" type="image/x-icon">
-    <!-- Font Icons css -->
-    <link rel="stylesheet" href="/quarter/css/font-icons.css">
-    <!-- plugins css -->
-    <link rel="stylesheet" href="/quarter/css/plugins.css">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/quarter/css/style.css">
-    <!-- Responsive css -->
-    <link rel="stylesheet" href="/quarter/css/responsive.css">
-    <link rel="stylesheet" href="/css/custom.css">
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:image" content="../../zenix.dexignzone.com/xhtml/social-image.png" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>@Html.Raw($"پنل مدیریت | {ViewData["Title"]}")</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/zenix/images/favicon.png" />
+    @*    <link rel="stylesheet" href="/zenix/vendor/chartist/css/chartist.min.css" />*@
+    <link href="/zenix/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="/zenix/vendor/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="/zenix/css/style.css" rel="stylesheet" />
+    <link href="/zenix/css/custom-styles.css" rel="stylesheet" />
+    <link href="/zenix/css/iconpicker.css" rel="stylesheet" />
+    <link href="/zenix/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    @* <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet"> *@
+    <link href="/Plugins/icomoon/style.css" rel="stylesheet" />
+    <link href="/Plugins/ToastR/toastr.css" rel="stylesheet" />
     @RenderSection("_Styles", false)
 </head>
-
 <body>
-    <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-    <!-- Add your site or application content here -->
-    <!-- Body main wrapper start -->
-    <div class="body-wrapper">
 
-        <!-- HEADER AREA START (header-5) -->
-        <header class="ltn__header-area ltn__header-5 ltn__header-logo-and-mobile-menu-in-mobile ltn__header-transparent--- gradient-color-4---">
-            <!-- ltn__header-top-area start -->
-            <div class="ltn__header-top-area d-none">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="ltn__top-bar-menu">
-                                <ul>
-                                    <li><a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you"><i class="icon-mail"></i> info@webmail.com</a></li>
-                                    <li><a href="locations.html"><i class="icon-placeholder"></i> 15/A, Nest Tower, NYC</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="top-bar-right text-right">
-                                <div class="ltn__top-bar-menu">
-                                    <ul>
-                                        <li>
-                                            <!-- ltn__language-menu -->
-                                            <div class="ltn__drop-menu ltn__currency-menu ltn__language-menu">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#" class="dropdown-toggle"><span class="active-currency">English</span></a>
-                                                        <ul>
-                                                            <li><a href="#">Arabic</a></li>
-                                                            <li><a href="#">Bengali</a></li>
-                                                            <li><a href="#">Chinese</a></li>
-                                                            <li><a href="#">English</a></li>
-                                                            <li><a href="#">French</a></li>
-                                                            <li><a href="#">Hindi</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <!-- ltn__social-media -->
-                                            <div class="ltn__social-media">
-                                                <ul>
-                                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
 
-                                                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                                    <li><a href="#" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <a href="/" class="brand-logo">
+                <svg class="logo-abbr" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="svg-logo-rect" width="50" height="50" rx="6" fill="#EB8153"></rect>
+                    <path class="svg-logo-path"
+                          d="M17.5158 25.8619L19.8088 25.2475L14.8746 11.1774C14.5189 9.84988 15.8701 9.0998 16.8205 9.75055L33.0924 22.2055C33.7045 22.5589 33.8512 24.0717 32.6444 24.3951L30.3514 25.0095L35.2856 39.0796C35.6973 40.1334 34.4431 41.2455 33.3397 40.5064L17.0678 28.0515C16.2057 27.2477 16.5504 26.1205 17.5158 25.8619ZM18.685 14.2955L22.2224 24.6007L29.4633 22.6605L18.685 14.2955ZM31.4751 35.9615L27.8171 25.6886L20.5762 27.6288L31.4751 35.9615Z"
+                          fill="white"></path>
+                </svg>
+                <svg class="brand-title" width="74" height="22" viewBox="0 0 74 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="svg-logo-path"
+                          d="M0.784 17.556L10.92 5.152H1.176V1.12H16.436V4.564L6.776 16.968H16.548V21H0.784V17.556ZM25.7399 21.28C24.0785 21.28 22.6599 20.9347 21.4839 20.244C20.3079 19.5533 19.4025 18.6387 18.7679 17.5C18.1519 16.3613 17.8439 15.1293 17.8439 13.804C17.8439 12.3853 18.1519 11.088 18.7679 9.912C19.3839 8.736 20.2799 7.79333 21.4559 7.084C22.6319 6.37467 24.0599 6.02 25.7399 6.02C27.4012 6.02 28.8199 6.37467 29.9959 7.084C31.1719 7.79333 32.0585 8.72667 32.6559 9.884C33.2719 11.0413 33.5799 12.2827 33.5799 13.608C33.5799 14.1493 33.5425 14.6253 33.4679 15.036H22.6039C22.6785 16.0253 23.0332 16.7813 23.6679 17.304C24.3212 17.808 25.0585 18.06 25.8799 18.06C26.5332 18.06 27.1585 17.9013 27.7559 17.584C28.3532 17.2667 28.7639 16.8373 28.9879 16.296L32.7959 17.36C32.2172 18.5173 31.3119 19.46 30.0799 20.188C28.8665 20.916 27.4199 21.28 25.7399 21.28ZM22.4919 12.292H28.8759C28.7825 11.3587 28.4372 10.6213 27.8399 10.08C27.2612 9.52 26.5425 9.24 25.6839 9.24C24.8252 9.24 24.0972 9.52 23.4999 10.08C22.9212 10.64 22.5852 11.3773 22.4919 12.292ZM49.7783 21H45.2983V12.74C45.2983 11.7693 45.1116 11.0693 44.7383 10.64C44.3836 10.192 43.9076 9.968 43.3103 9.968C42.6943 9.968 42.069 10.2107 41.4343 10.696C40.7996 11.1813 40.3516 11.8067 40.0903 12.572V21H35.6103V6.3H39.6423V8.764C40.1836 7.90533 40.949 7.23333 41.9383 6.748C42.9276 6.26267 44.0663 6.02 45.3543 6.02C46.3063 6.02 47.0716 6.19733 47.6503 6.552C48.2476 6.888 48.6956 7.336 48.9943 7.896C49.3116 8.43733 49.517 9.03467 49.6103 9.688C49.7223 10.3413 49.7783 10.976 49.7783 11.592V21ZM52.7548 4.62V0.559999H57.2348V4.62H52.7548ZM52.7548 21V6.3H57.2348V21H52.7548ZM63.4657 6.3L66.0697 10.444L66.3497 10.976L66.6297 10.444L69.2337 6.3H73.8537L68.9257 13.608L73.9657 21H69.3457L66.6017 16.884L66.3497 16.352L66.0977 16.884L63.3537 21H58.7337L63.7737 13.692L58.8457 6.3H63.4657Z"
+                          fill="black"></path>
+                </svg>
+
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>
             </div>
-            <!-- ltn__header-top-area end -->
-            <!-- ltn__header-middle-area start -->
-            <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="site-logo-wrap">
-                                <div class="site-logo">
-                                    <a href="index.html"><img src="/quarter/img/logo.png" alt="Logo"></a>
+        </div>
+        <div class="chatbox">
+            <div class="chatbox-close"></div>
+            <div class="custom-tab-1">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#notes">یادداشت</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#alerts">هشدارها</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#chat">چت کنید</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="chat" role="tabpanel">
+                        <div class="card mb-sm-3 mb-md-0 contacts_card dz-chat-user-box">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"></rect>
+                                            <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"></rect>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <div>
+                                    <h6 class="mb-1">لیست چت</h6>
+                                    <p class="mb-0">نمایش همه</p>
                                 </div>
-                                <div class="get-support clearfix d-none">
-                                    <div class="get-support-icon">
-                                        <i class="icon-call"></i>
-                                    </div>
-                                    <div class="get-support-info">
-                                        <h6>Get Support</h6>
-                                        <h4><a href="tel:+123456789">123-456-789-10</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col header-menu-column">
-                            <div class="header-menu d-none d-xl-block">
-                                <nav>
-                                    <div class="ltn__main-menu">
-                                        <ul>
-                                            <li class="menu-icon">
-                                                <a href="#">صفحه اصلی</a>
-                                                <ul class="sub-menu menu-pages-img-show">
-                                                    <li>
-                                                        <a href="index.html">صفحه اصلی استایل 1</a>
-                                                        <img src="/quarter/img/home-demos/home-1.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2.html">صفحه اصلی استایل 2</a>
-                                                        <img src="/quarter/img/home-demos/home-2.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3.html">صفحه اصلی استایل 3</a>
-                                                        <img src="/quarter/img/home-demos/home-3.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-4.html">صفحه اصلی استایل 4</a>
-                                                        <img src="/quarter/img/home-demos/home-4.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-5.html">صفحه اصلی استایل 5 <span class="menu-item-badge">ویدیو</span></a>
-                                                        <img src="/quarter/img/home-demos/home-5.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-6.html">صفحه اصلی استایل 6</a>
-                                                        <img src="/quarter/img/home-demos/home-6.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-7.html">صفحه اصلی استایل 7</a>
-                                                        <img src="/quarter/img/home-demos/home-7.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-8.html">صفحه اصلی استایل 8</a>
-                                                        <img src="/quarter/img/home-demos/home-8.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-9.html">صفحه اصلی استایل 9</a>
-                                                        <img src="/quarter/img/home-demos/home-9.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-10.html">صفحه اصلی استایل 10 <span class="menu-item-badge">مپ</span></a>
-                                                        <img src="/quarter/img/home-demos/home-10.jpg" alt="#">
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-11.html">صفحه اصلی استایل 11</a>
-                                                        <img src="/quarter/img/home-demos/home-11.jpg" alt="#">
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-icon">
-                                                <a href="#">درباره ما</a>
-                                                <ul>
-                                                    <li><a href="about.html">درباره ما</a></li>
-                                                    <li><a href="service.html">سرویس</a></li>
-                                                    <li><a href="service-details.html">جزئیات سرویس</a></li>
-                                                    <li><a href="portfolio.html">نمونه کار 1</a></li>
-                                                    <li><a href="portfolio-2.html">نمونه کار 2</a></li>
-                                                    <li><a href="portfolio-details.html">جزئیات نمونه کار</a></li>
-                                                    <li><a href="team.html">تیم</a></li>
-                                                    <li><a href="team-details.html">جزئیات تیم</a></li>
-                                                    <li><a href="faq.html">سوالات متداول</a></li>
-                                                    <li><a href="locations.html">لوکیشن گوگل مپ</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-icon">
-                                                <a href="#">فروشگاه</a>
-                                                <ul>
-                                                    <li><a href="shop.html">فروشگاه</a></li>
-                                                    <li><a href="shop-grid.html">فروشگاه شبکه</a></li>
-                                                    <li><a href="shop-left-sidebar.html">فروشگاه سایدبار چپ</a></li>
-                                                    <li><a href="shop-right-sidebar.html">فروشگاه سایدبار راست</a></li>
-                                                    <li><a href="product-details.html">جزئیات فروشگاه </a></li>
-                                                    <li>
-                                                        <a href="#">صفحات دیگر <span class="float-right">>></span></a>
-                                                        <ul>
-                                                            <li><a href="cart.html">سبد خرید</a></li>
-                                                            <li><a href="wishlist.html">علاقه مندی</a></li>
-                                                            <li><a href="checkout.html">بررسی مجدد</a></li>
-                                                            <li><a href="order-tracking.html">رهگیری سفارش</a></li>
-                                                            <li><a href="account.html">اکانت من</a></li>
-                                                            <li><a href="login.html">ورود</a></li>
-                                                            <li><a href="register.html">ثبت نام</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-icon">
-                                                <a href="#">اخبار</a>
-                                                <ul>
-                                                    <li><a href="blog.html">اخبار</a></li>
-                                                    <li><a href="blog-grid.html">اخبار شبکه</a></li>
-                                                    <li><a href="blog-left-sidebar.html">اخبار سایدبار چپ</a></li>
-                                                    <li><a href="blog-right-sidebar.html">اخبار سایدبار راست</a></li>
-                                                    <li><a href="blog-details.html">جزئیات اخبار</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-icon">
-                                                <a href="#">صفحات</a>
-                                                <ul class="mega-menu">
-                                                    <li>
-                                                        <a href="#">صفحات داخلی</a>
-                                                        <ul>
-                                                            <li><a href="portfolio.html">نمونه کار 1</a></li>
-                                                            <li><a href="portfolio-2.html">نمونه کار 2</a></li>
-                                                            <li><a href="portfolio-details.html">جزئیات نمونه کار</a></li>
-                                                            <li><a href="team.html">تیم</a></li>
-                                                            <li><a href="team-details.html">جزئیات تیم</a></li>
-                                                            <li><a href="faq.html">سوالات متداول</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">صفحات داخلی</a>
-                                                        <ul>
-                                                            <li><a href="history.html">تاریخچه</a></li>
-                                                            <li><a href="add-listing.html">ارسال آگهی</a></li>
-                                                            <li><a href="locations.html">لوکیشن گوگل مپ</a></li>
-                                                            <li><a href="404.html">404</a></li>
-                                                            <li><a href="contact.html">تماس با ما</a></li>
-                                                            <li><a href="coming-soon.html">به زودی</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">صفحه فروشگاه</a>
-                                                        <ul>
-                                                            <li><a href="shop.html">فروشگاه</a></li>
-                                                            <li><a href="shop-left-sidebar.html">فروشگاه سایدبار چپ</a></li>
-                                                            <li><a href="shop-right-sidebar.html">فروشگاه سایدبار راست</a></li>
-                                                            <li><a href="shop-grid.html">فروشگاه شبکه</a></li>
-                                                            <li><a href="product-details.html">جزئیات فروشگاه </a></li>
-                                                            <li><a href="cart.html">سبد خرید</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop.html"><img src="/quarter/img/banner/menu-banner-1.jpg" alt="#"></a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">تماس با ما</a></li>
-                                            <li class="special-link">
-                                                <a href="add-listing.html">ارسال آگهی</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="ltn__header-options ltn__header-options-2 ">
-                            <!-- Mobile Menu Button -->
-                            <div class="mobile-menu-toggle d-xl-none">
-                                <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
-                                    <svg viewbox="0 0 800 600">
-                                        <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
-                                        <path d="M300,320 L540,320" id="middle"></path>
-                                        <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                            <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                            <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                        </g>
                                     </svg>
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ltn__header-middle-area end -->
-        </header>
-        <!-- HEADER AREA END -->
-        <!-- Utilize Cart Menu Start -->
-        <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">
-            <div class="ltn__utilize-menu-inner ltn__scrollbar">
-                <div class="ltn__utilize-menu-head">
-                    <span class="ltn__utilize-menu-title">سبد خرید</span>
-                    <button class="ltn__utilize-close">×</button>
-                </div>
-                <div class="mini-cart-product-area ltn__scrollbar">
-                    <div class="mini-cart-item clearfix">
-                        <div class="mini-cart-img">
-                            <a href="#"><img src="/quarter/img/product/1.png" alt="Image"></a>
-                            <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                        </div>
-                        <div class="mini-cart-info">
-                            <h6><a href="#">آپارتمان 60 متری در عظیمیه</a></h6>
-                            <span class="mini-cart-quantity">3.000.000.000 تومان</span>
-                        </div>
-                    </div>
-                    <div class="mini-cart-item clearfix">
-                        <div class="mini-cart-img">
-                            <a href="#"><img src="/quarter/img/product/2.png" alt="Image"></a>
-                            <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                        </div>
-                        <div class="mini-cart-info">
-                            <h6><a href="#">آپارتمان 95 متری در گلشهر</a></h6>
-                            <span class="mini-cart-quantity">1.850.000.000 تومان</span>
-                        </div>
-                    </div>
-                    <div class="mini-cart-item clearfix">
-                        <div class="mini-cart-img">
-                            <a href="#"><img src="/quarter/img/product/3.png" alt="Image"></a>
-                            <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                        </div>
-                        <div class="mini-cart-info">
-                            <h6><a href="#">واحد 85 متری در مترو کرج</a></h6>
-                            <span class="mini-cart-quantity">1.100.000.000 تومان</span>
-                        </div>
-                    </div>
-                    <div class="mini-cart-item clearfix">
-                        <div class="mini-cart-img">
-                            <a href="#"><img src="/quarter/img/product/4.png" alt="Image"></a>
-                            <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                        </div>
-                        <div class="mini-cart-info">
-                            <h6><a href="#">واحد 60 متری در گوهردشت</a></h6>
-                            <span class="mini-cart-quantity">1.500.000.000 تومان</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="mini-cart-footer">
-                    <div class="mini-cart-sub-total">
-                        <h5>مجموع: <span>7.450.000.000 تومان</span></h5>
-                    </div>
-                    <div class="btn-wrapper">
-                        <a href="cart.html" class="theme-btn-1 btn btn-effect-1"> سبد خرید</a>
-                        <a href="cart.html" class="theme-btn-2 btn btn-effect-2">بررسی مجدد</a>
-                    </div>
-                    <p>جهت دریافت مشاوره بیشتر تماس بگیرید</p>
-                </div>
-
-            </div>
-        </div>
-        <!-- Utilize Cart Menu End -->
-        <!-- Utilize Mobile Menu Start -->
-        <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
-            <div class="ltn__utilize-menu-inner ltn__scrollbar">
-                <div class="ltn__utilize-menu-head">
-                    <div class="site-logo">
-                        <a href="index.html"><img src="/quarter/img/logo.png" alt="Logo"></a>
-                    </div>
-                    <button class="ltn__utilize-close">×</button>
-                </div>
-                <div class="ltn__utilize-menu-search-form">
-                    <form action="#">
-                        <input type="text" placeholder="جستجو برای ...">
-                        <button><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-                <div class="ltn__utilize-menu">
-                    <ul>
-                        <li>
-                            <a href="#">صفحه اصلی</a>
-                            <ul class="sub-menu">
-                                <li><a href="index.html">صفحه اصلی استایل 1</a></li>
-                                <li><a href="index-2.html">صفحه اصلی استایل 2</a></li>
-                                <li><a href="index-3.html">صفحه اصلی استایل 3</a></li>
-                                <li><a href="index-4.html">صفحه اصلی استایل 4</a></li>
-                                <li><a href="index-5.html">صفحه اصلی استایل 5  <span class="menu-item-badge">ویدیو</span></a></li>
-                                <li><a href="index-6.html">صفحه اصلی استایل 6</a></li>
-                                <li><a href="index-7.html">صفحه اصلی استایل 7</a></li>
-                                <li><a href="index-8.html">صفحه اصلی استایل 8</a></li>
-                                <li><a href="index-9.html">صفحه اصلی استایل 9</a></li>
-                                <li><a href="index-10.html">صفحه اصلی استایل 10 <span class="menu-item-badge">مپ</span></a></li>
-                                <li><a href="index-11.html">صفحه اصلی استایل 11</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">درباره ما</a>
-                            <ul class="sub-menu">
-                                <li><a href="about.html">درباره ما</a></li>
-                                <li><a href="service.html">خدمات</a></li>
-                                <li><a href="service-details.html">جزئیات خدمات</a></li>
-                                <li><a href="portfolio.html">نمونه کار 1</a></li>
-                                <li><a href="portfolio-2.html">نمونه کار 2</a></li>
-                                <li><a href="portfolio-details.html">جزئیات نمونه کار</a></li>
-                                <li><a href="team.html">تیم</a></li>
-                                <li><a href="team-details.html">جزئیات تیم</a></li>
-                                <li><a href="faq.html">سوالات متداول</a></li>
-                                <li><a href="locations.html">لوکیشن گوگل مپ</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">فروشگاه</a>
-                            <ul class="sub-menu">
-                                <li><a href="shop.html">فروشگاه</a></li>
-                                <li><a href="shop-grid.html">فروشگاه شبکه</a></li>
-                                <li><a href="shop-left-sidebar.html">فروشگاه سایدبار چپ</a></li>
-                                <li><a href="shop-right-sidebar.html">فروشگاه سایدبار راست</a></li>
-                                <li><a href="product-details.html">جزئیات فروشگاه </a></li>
-                                <li><a href="cart.html">سبد خرید</a></li>
-                                <li><a href="wishlist.html">علاقه مندی</a></li>
-                                <li><a href="checkout.html">بررسی مجدد</a></li>
-                                <li><a href="order-tracking.html">رهگیری سفارش</a></li>
-                                <li><a href="account.html">اکانت من</a></li>
-                                <li><a href="login.html">ورود</a></li>
-                                <li><a href="register.html">ثبت نام</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">اخبار</a>
-                            <ul class="sub-menu">
-                                <li><a href="blog.html">اخبار</a></li>
-                                <li><a href="blog-grid.html">اخبار شبکه</a></li>
-                                <li><a href="blog-left-sidebar.html">اخبار سایدبار چپ</a></li>
-                                <li><a href="blog-right-sidebar.html">اخبار سایدبار راست</a></li>
-                                <li><a href="blog-details.html">جزئیات اخبار</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">صفحات</a>
-                            <ul class="sub-menu">
-                                <li><a href="about.html">درباره ما</a></li>
-                                <li><a href="service.html">سرویس</a></li>
-                                <li><a href="service-details.html">جزئیات سرویس</a></li>
-                                <li><a href="portfolio.html">نمونه کار 1</a></li>
-                                <li><a href="portfolio-2.html">نمونه کار 2</a></li>
-                                <li><a href="portfolio-details.html">جزئیات نمونه کار</a></li>
-                                <li><a href="team.html">تیم</a></li>
-                                <li><a href="team-details.html">جزئیات تیم</a></li>
-                                <li><a href="faq.html">سوالات متداول</a></li>
-                                <li><a href="history.html">تاریخچه</a></li>
-                                <li><a href="add-listing.html">ارسال آگهی</a></li>
-                                <li><a href="locations.html">لوکیشن گوگل مپ</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="contact.html">تماس با ما</a></li>
-                                <li><a href="coming-soon.html">به زودی</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">تماس با ما</a></li>
-                    </ul>
-                </div>
-                <div class="ltn__utilize-buttons ltn__utilize-buttons-2">
-                    <ul>
-                        <li>
-                            <a href="account.html" title="اکانت من">
-                                <span class="utilize-btn-icon">
-                                    <i class="far fa-user"></i>
-                                </span>
-                                اکانت من
-                            </a>
-                        </li>
-                        <li>
-                            <a href="wishlist.html" title="علاقه مندی">
-                                <span class="utilize-btn-icon">
-                                    <i class="far fa-heart"></i>
-                                    <sup>3</sup>
-                                </span>
-                                علاقه مندی
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cart.html" title="سبد خرید">
-                                <span class="utilize-btn-icon">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <sup>5</sup>
-                                </span>
-                                سبد خرید
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="ltn__social-media-2">
-                    <ul>
-                        <li><a href="#" title="فیسبوک"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" title="توییتر"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#" title="لینکدین"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#" title="اینستاگرام"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Utilize Mobile Menu End -->
-
-        <div class="ltn__utilize-overlay"></div>
-        @RenderBody()
-
-
-        <partial name="Partials\Footers\_Footer" />
-
-        <!-- FOOTER AREA END --><!-- MODAL AREA START (Quick View Modal) -->
-        <div class="ltn__modal-area ltn__quick-view-modal-area">
-            <div class="modal fade" id="quick_view_modal" tabindex="-1">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                <!-- <i class="fas fa-times"></i> -->
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="ltn__quick-view-modal-inner">
-                                <div class="modal-product-item">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <div class="modal-product-img">
-                                                <img src="/quarter/img/product/4.png" alt="#">
+                            <div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body">
+                                <ul class="contacts">
+                                    <li class="name-first-letter">آ</li>
+                                    <li class="active dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>آرچی پارکر</span>
+                                                <p>جان آنلاین است</p>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-12">
-                                            <div class="modal-product-info">
-                                                <div class="product-ratting">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        <li class="review-total"> <a href="#"> ( 95 امتیاز )</a></li>
-                                                    </ul>
-                                                </div>
-                                                <h3><a href="product-details.html">3 خوابه</a></h3>
-                                                <div class="product-price">
-                                                    <span>600.000.000 تومان</span>
-                                                    <del>850.000.000 تومان</del>
-                                                </div>
-                                                <hr>
-                                                <div class="modal-product-brief">
-                                                    <p>لورم ایپسوم متن ساختگی است و در هر زمان میتوانید ویرایش یا تغییر دهید.لورم ایپسوم متن ساختگی است و در هر زمان میتوانید ویرایش یا تغییر دهید.</p>
-                                                </div>
-                                                <div class="modal-product-meta ltn__product-details-menu-1 d-none">
-                                                    <ul>
-                                                        <li>
-                                                            <strong>دسته بندی:</strong>
-                                                            <span>
-                                                                <a href="#">پارت</a>
-                                                                <a href="#">ماشین</a>
-                                                                <a href="#">صندلی</a>
-                                                                <a href="#">کاور</a>
-                                                            </span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ltn__product-details-menu-2 d-none">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="cart-plus-minus">
-                                                                <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-toggle="modal" data-target="#add_to_cart_modal">
-                                                                <i class="fas fa-shopping-cart"></i>
-                                                                <span>افزودن به سبد خرید</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <!-- <hr> -->
-                                                <div class="ltn__product-details-menu-3">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="" title="Wishlist" data-toggle="modal" data-target="#liton_wishlist_modal">
-                                                                <i class="far fa-heart"></i>
-                                                                <span>علاقه مندی</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="" title="Compare" data-toggle="modal" data-target="#quick_view_modal">
-                                                                <i class="fas fa-exchange-alt"></i>
-                                                                <span>مقایسه</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <hr>
-                                                <div class="ltn__social-media">
-                                                    <ul>
-                                                        <li>اشتراک گذاری:</li>
-                                                        <li><a href="#" title="فیسبوک"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="#" title="توییتر"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#" title="لینکدین"><i class="fab fa-linkedin"></i></a></li>
-                                                        <li><a href="#" title="اینستاگرام"><i class="fab fa-instagram"></i></a></li>
-
-                                                    </ul>
-                                                </div>
-                                                <label class="float-right mb-0"><a class="text-decoration" href="product-details.html"><small>مشاهده جزئیات</small></a></label>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>آلفی میسون</span>
+                                                <p>طاهره 7 دقیقه پیش رفت</p>
                                             </div>
                                         </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/3.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>آهارلی کین</span>
+                                                <p>سامی آنلاین است</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/4.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>آتان جاکوبی</span>
+                                                <p>نرگس 30 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">ب</li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/5.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>بشید صمیم</span>
+                                                <p>رشید 50 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>بردی رونان</span>
+                                                <p>جان آنلاین است</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>سرج کارسون</span>
+                                                <p>طاهره 7 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">دی</li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/3.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>دری پارکر</span>
+                                                <p>سامی آنلاین است</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/4.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>دنری هانتر</span>
+                                                <p>نرگس 30 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">جی</li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/5.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>جک رونان</span>
+                                                <p>رشید 50 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>جیکوب تاکر</span>
+                                                <p>جان آنلاین است</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>جیمز لوگان</span>
+                                                <p>طاهره 7 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/3.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>جاشوا وستون</span>
+                                                <p>سامی آنلاین است</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">ر</li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/4.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>الیور آکر</span>
+                                                <p>نرگس 30 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="/zenix/images/avatar/5.jpg" class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>اسکار وستون</span>
+                                                <p>رشید 50 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card chat dz-chat-history-box d-none">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="#" class="dz-chat-history-back">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                            <rect fill="#000000"
+                                                  opacity="0.3"
+                                                  transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) "
+                                                  x="14"
+                                                  y="7"
+                                                  width="2"
+                                                  height="10"
+                                                  rx="1"></rect>
+                                            <path d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z"
+                                                  fill="#000000"
+                                                  fill-rule="nonzero"
+                                                  transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) "></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <div>
+                                    <h6 class="mb-1">چت با خیلش</h6>
+                                    <p class="mb-0 text-success">برخط</p>
+                                </div>
+                                <div class="dropdown">
+                                    <a href="#" data-toggle="dropdown" aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li class="dropdown-item"><i class="fa fa-user-circle text-primary mr-2"></i> مشاهده نمایه</li>
+                                        <li class="dropdown-item"><i class="fa fa-users text-primary mr-2"></i> به دوستان نزدیک اضافه کنید</li>
+                                        <li class="dropdown-item"><i class="fa fa-plus text-primary mr-2"></i> به گروه اضافه کنید</li>
+                                        <li class="dropdown-item"><i class="fa fa-ban text-primary mr-2"></i> مسدود کردن</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body msg_card_body dz-scroll" id="DZ_W_Contacts_Body3">
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        سلام سامیم چطوری؟
+                                        <span class="msg_time">ساعت 8:40 صبح امروز</span>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        سلام خالد من خوبم tnx شما چطور؟
+                                        <span class="msg_time_send">8:55 صبح امروز</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        من هم خوبم، ممنون از الگوی چت شما
+                                        <span class="msg_time">، امروز ساعت 9 صبح</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        <span class="msg_time_send">امروز ساعت 9:05 صبح</span>
+                                        خوش آمدید
+                                        <span class="msg_time_send"></span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        <span class="msg_time">امروز ساعت 9:07</span>
+                                        صبح به دنبال الگوهای بعدی شما هستم
+                                        <span class="msg_time"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        بسیار خوب، متشکرم روز خوبی داشته باشید
+                                        <span class="msg_time_send">، ساعت 9:10 صبح امروز</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        خداحافظ
+                                        <span class="msg_time">، امروز ساعت 9:12 صبح می بینمت</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        سلام سامیم چطوری؟
+                                        <span class="msg_time">ساعت 8:40 صبح امروز</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        سلام خالد من خوبم tnx شما چطور؟
+                                        <span class="msg_time_send">8:55 صبح امروز</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        من هم خوبم، ممنون از الگوی چت شما
+                                        <span class="msg_time">، امروز ساعت 9 صبح</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        <span class="msg_time_send">امروز ساعت 9:05 صبح</span>
+                                        خوش آمدید
+                                        <span class="msg_time_send"></span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        <span class="msg_time">امروز ساعت 9:07</span>
+                                        صبح به دنبال الگوهای بعدی شما هستم
+                                        <span class="msg_time"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        بسیار خوب، متشکرم روز خوبی داشته باشید
+                                        <span class="msg_time_send">، ساعت 9:10 صبح امروز</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="/zenix/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        خداحافظ
+                                        <span class="msg_time">، امروز ساعت 9:12 صبح می بینمت</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer type_msg">
+                                <div class="input-group">
+                                    <textarea class="form-control" placeholder="پیام خود را تایپ کنید..."></textarea>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-location-arrow"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="alerts" role="tabpanel">
+                        <div class="card mb-sm-3 mb-md-0 contacts_card">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                            <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                            <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <div>
+                                    <h6 class="mb-1">اطلاعیه ها</h6>
+                                    <p class="mb-0">نمایش همه</p>
+                                </div>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                  fill="#000000"
+                                                  fill-rule="nonzero"
+                                                  opacity="0.3"></path>
+                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                  fill="#000000"
+                                                  fill-rule="nonzero"></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body1">
+                                <ul class="contacts">
+                                    <li class="name-first-letter">وضعیت سرور</li>
+                                    <li class="active">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont primary">ب</div>
+                                            <div class="user_info">
+                                                <span>تولد دیوید نستر</span>
+                                                <p class="text-primary">امروز</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">اجتماعی</li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont success">ت<i class="icon fa-birthday-cake"></i></div>
+                                            <div class="user_info">
+                                                <span>کمال ساده شده</span>
+                                                <p>جیم اسمیت در مورد وضعیت شما نظر داد</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">وضعیت سرور</li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont primary">به<i class="icon fa fa-user-plus"></i></div>
+                                            <div class="user_info">
+                                                <span>آهارلی کین</span>
+                                                <p>سامی آنلاین است</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont info">ع<i class="icon fa fa-user-plus"></i></div>
+                                            <div class="user_info">
+                                                <span>آتان جاکوبی</span>
+                                                <p>نرگس 30 دقیقه پیش رفت</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="notes">
+                        <div class="card mb-sm-3 mb-md-0 note_card">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"></rect>
+                                            <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"></rect>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <div>
+                                    <h6 class="mb-1">یادداشت</h6>
+                                    <p class="mb-0">نت های جدید اضافه کنید</p>
+                                </div>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                  fill="#000000"
+                                                  fill-rule="nonzero"
+                                                  opacity="0.3"></path>
+                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                  fill="#000000"
+                                                  fill-rule="nonzero"></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body2">
+                                <ul class="contacts">
+                                    <li class="active">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>سفارش جدید ثبت شد..</span>
+                                                <p>10 دی 1400</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="#" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>یوتیوب، یک وب سایت اشتراک گذاری ویدئو..</span>
+                                                <p>10 دی 1400</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="#" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>جان فقط محصولت را بخر..</span>
+                                                <p>10 دی 1400</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="#" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>آتان جاکوبی</span>
+                                                <p>10 دی 1400</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="#" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- MODAL AREA END -->
-        <!-- MODAL AREA START (Add To Cart Modal) -->
-        <div class="ltn__modal-area ltn__add-to-cart-modal-area">
-            <div class="modal fade" id="add_to_cart_modal" tabindex="-1">
-                <div class="modal-dialog modal-md" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="ltn__quick-view-modal-inner">
-                                <div class="modal-product-item">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="modal-product-img">
-                                                <img src="/quarter/img/product/1.png" alt="#">
-                                            </div>
-                                            <div class="modal-product-info">
-                                                <h5><a href="product-details.html">Brake Conversion Kit</a></h5>
-                                                <p class="added-cart"><i class="fa fa-check-circle"></i>  Successfully added to your Cart</p>
-                                                <div class="btn-wrapper">
-                                                    <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
-                                                    <a href="checkout.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
-                                                </div>
-                                            </div>
-                                            <!-- additional-info -->
-                                            <div class="additional-info d-none">
-                                                <p>We want to give you <b>10% discount</b> for your first order, <br>  Use discount code at checkout</p>
-                                                <div class="payment-method">
-                                                    <img src="/quarter/img/icons/payment.png" alt="#">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <partial name="_Header" />
+        <partial name="_Sidebar" />
+        <div class="content-body">
+            @RenderBody()
         </div>
-        <!-- MODAL AREA END -->
-        <!-- MODAL AREA START (Wishlist Modal) -->
-        <div class="ltn__modal-area ltn__add-to-cart-modal-area">
-            <div class="modal fade" id="liton_wishlist_modal" tabindex="-1">
-                <div class="modal-dialog modal-md" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="ltn__quick-view-modal-inner">
-                                <div class="modal-product-item">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="modal-product-img">
-                                                <img src="/quarter/img/product/7.png" alt="#">
-                                            </div>
-                                            <div class="modal-product-info">
-                                                <h5><a href="product-details.html">Brake Conversion Kit</a></h5>
-                                                <p class="added-cart"><i class="fa fa-check-circle"></i>  Successfully added to your Wishlist</p>
-                                                <div class="btn-wrapper">
-                                                    <a href="wishlist.html" class="theme-btn-1 btn btn-effect-1">View Wishlist</a>
-                                                </div>
-                                            </div>
-                                            <!-- additional-info -->
-                                            <div class="additional-info d-none">
-                                                <p>We want to give you <b>10% discount</b> for your first order, <br>  Use discount code at checkout</p>
-                                                <div class="payment-method">
-                                                    <img src="/quarter/img/icons/payment.png" alt="#">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- MODAL AREA END -->
-
+        <partial name="_FooterDashboard" />
     </div>
-    <!-- Body main wrapper end -->
-    <!-- preloader area start -->
-    <div class="preloader d-none" id="preloader">
-        <div class="preloader-inner">
-            <div class="spinner">
-                <div class="dot1"></div>
-                <div class="dot2"></div>
-            </div>
-        </div>
-    </div>
-    <!-- preloader area end -->
-    <!-- All JS Plugins -->
-    <script src="/quarter/js/plugins.js"></script>
-    <!-- Main JS -->
-    <script src="/quarter/js/main.js"></script>
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/zenix/vendor/global/global.min.js"></script>
+    <script src="/zenix/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="/zenix/js/dashboard/dashboard-1.js"></script>
+    <script src="/zenix/vendor/owl-carousel/owl.carousel.js"></script>
+    <script src="/zenix/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="/zenix/vendor/peity/jquery.peity.min.js"></script>
+    <script src="/zenix/vendor/apexchart/apexchart.js"></script>
+    <script src="/zenix/js/custom.min.js"></script>
+    <script src="/zenix/js/deznav-init.js"></script>
+    <script src="/zenix/js/demo.js"></script>
+    <script src="/zenix/js/styleSwitcher.js"></script>
+    <script src="/zenix/js/customScripts/custom-scripts.js"></script>
+    <script src="/js/copyrightAdmin.js"></script>
+    <script src="/Plugins/ToastR/toastr.min.js"></script>
     @RenderSection("_Scripts", false)
 </body>
 </html>
-

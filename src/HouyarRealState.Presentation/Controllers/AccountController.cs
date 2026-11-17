@@ -1,4 +1,10 @@
-﻿using HouyarRealState.Application.Services;
+﻿using FluentValidation;
+using HouyarRealState.Application.DTOs.Identity;
+using HouyarRealState.Application.Queries;
+using HouyarRealState.Application.Services;
+using HouyarRealState.Domain.Entities.User;
+using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HouyarRealState.Presentation.Controllers
@@ -7,49 +13,77 @@ namespace HouyarRealState.Presentation.Controllers
     {
 
         private readonly ILanguageService _languageService;
+        private readonly IMediator _mediator;
+        public readonly UserManager<ApplicationUser> _userManager;
+        SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(ILanguageService languageService)
+        public AccountController(ILanguageService languageService, IMediator mediator, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _languageService = languageService;
+            _mediator = mediator;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [Route("/Login")]
-        public async Task<IActionResult> Login(string? languageCulture,string returnUrl = "/")
+        public async Task<IActionResult> Login(string returnUrl = "/")
         {
 
             if (User.Identity?.IsAuthenticated == true)
             {
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "Home");
             }
 
-
-
-
-            if (!string.IsNullOrWhiteSpace(languageCulture))
-            {
-                if (languageCulture.ToLower() == LanguageCultures.Persian.ToLower() || languageCulture.ToLower() == LanguageCultures.English.ToLower() || languageCulture.ToLower() == LanguageCultures.Arabic.ToLower() || languageCulture.ToLower() == LanguageCultures.Turkish.ToLower())
-                {
-                    ViewData["LanguageCulture"] = await _languageService.ChangeLanguageAsync(languageCulture, HttpContext);
-                }
-
-            }
-            else
-            {
-                ViewData["LanguageCulture"] = await _languageService.GetLanguageCultureAsync(HttpContext);
-            }
-
-
-
-            if ((string)ViewData["LanguageCulture"] != LanguageCultures.Persian)
-            {
-                ViewData["ChangeUrl"] = $"/Login?languageCulture={ViewData["LanguageCulture"]}";
-            }
-
-
+            ViewBag.RandomBackground = $"{NameGenerator.GenerateRandomNumber(1, 60).ToString("00")}.gif";
             ViewBag.ReturnUrl = returnUrl;
 
 
             return View();
         }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> Login(GetTokenDTO dto, string returnUrl = "/")
+        {
+
+
+
+            try
+            {
+                var result = await _mediator.Send(new GetTokenQuery(dto));
+
+                await _mediator.Send(new SignInQuery(result.Value));
+
+                return Json(new { status = true, message = "ورود کاربر با موفقیت انجام شد", returnUrl = returnUrl });
+
+            }
+            catch (ValidationException fluentEx)
+            {
+
+                var message = fluentEx.Errors.Select(x => x.ErrorMessage).FirstOrDefault();
+
+                if (string.IsNullOrWhiteSpace(message))
+                {
+                    message = fluentEx.Message;
+                }
+
+                return Json(new { status = false, message = message });
+
+            }
+
+
+        }
+
+
+        [Route("/Logout")]
+        public async Task<IActionResult> Logout()
+        {
+            // حذف Cookie Authorization
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
+        }
+
+
     }
 }

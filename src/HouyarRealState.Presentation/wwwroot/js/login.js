@@ -1,14 +1,34 @@
-﻿const mobile = document.getElementById("Mobile");
+﻿$("#frmLogin").submit(function (e) {
 
-mobile.addEventListener("input", function () {
-    this.value = this.value.replace(/\D/g, "");
+    e.preventDefault();
+
+    var model = new FormData(this);
+
+    $(".submitWating").removeClass("hidden");
+    $(".submit").addClass("hidden");
+
+    $.ajax({
+        type: "POST",
+        data: model,
+        url: "/Account/Login",
+        processData: false,
+        contentType: false,
+        cache: false,
+        success: function (d) {
+
+            if (d.status == true) // Message Sent? Show the 'Thank You' message and hide the form
+            {
+                toastr.success(d.message);
+                window.location.href = d.returnUrl;
+            }
+
+            else {
+                $(".submit").removeClass("hidden");
+                $(".submitWating").addClass("hidden");
+                toastr.error(d.message);
+            }
+
+        }
+    })
+
 });
-
-mobile.addEventListener("keypress", function (e) {
-    if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
-    }
-});
-
-
-

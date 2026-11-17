@@ -124,5 +124,42 @@
     "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.xml\\10.0.13\\system.security.cryptography.xml.10.0.13.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'AutoMapper' 16.2.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6vhm-j9h7-f9gh",
+      "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'AutoMapper' 16.2.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-gpwp-5797-mjff",
+      "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'Microsoft.AspNetCore.WebUtilities' 2.3.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6527-9fp8-r4x6",
+      "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
+      "libraryId": "Microsoft.AspNetCore.WebUtilities",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

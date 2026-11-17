@@ -1,0 +1,95 @@
+﻿@model HouyarRealState.Application.DTOs.PagingViewModel
+
+@{
+    string filterUrl = "";
+
+    if (Model.Filters != null)
+    {
+        foreach (var item in Model.Filters)
+        {
+            filterUrl += $"&{item.Parameter}={item.Value}";
+        }
+    }
+}
+
+<div class="dataTables_paginate paging_simple_numbers" id="ListDatatableView_paginate">
+    @if (ViewBag.CurrentPage > 1)
+    {
+        <a href="@Model.Url?pageId=@((int)Model.CurrentPage - 1)@filterUrl" class="paginate_button previous" aria-controls="ListDatatableView" data-dt-idx="0" tabindex="0" id="ListDatatableView_previous">
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        </a>
+    }
+    else
+    {
+        <a class="paginate_button previous disabled" aria-controls="ListDatatableView" data-dt-idx="0" tabindex="0" id="ListDatatableView_previous">
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        </a>
+    }
+
+    <span>
+        @if (Model.CurrentPage > 1)
+        {
+
+            @if (Model.CurrentPage <= 6)
+            {
+                @for (int i = 1; i <= (ViewBag.CurrentPage - 1); i++)
+                {
+
+                    <a href="@Model.Url?pageId=@i@filterUrl" class="paginate_button" aria-controls="ListDatatableView" data-dt-idx="@i" tabindex="0">@i</a>
+                }
+            }
+
+        }
+        else
+        {
+            for (int i = (Model.CurrentPage - 6); i <= (Model.CurrentPage - 1); i++)
+            {
+                if (i > 0)
+                {
+                    <a href="@Model.Url?pageId=@i@filterUrl" class="paginate_button" aria-controls="ListDatatableView" data-dt-idx="@i" tabindex="0">@i</a>
+                }
+
+            }
+        }
+
+        <a class="paginate_button current" aria-controls="ListDatatableView" data-dt-idx="1" tabindex="0">@Model.CurrentPage</a>
+
+        @if (Model.RoundPageCount >= (Model.CurrentPage + 6))
+        {
+            for (int i = (Model.CurrentPage + 1); i <= (Model.CurrentPage + 6); i++)
+            {
+                if (i < Model.RoundPageCount)
+                {
+                    <a href="@Model.Url?pageId=@i@filterUrl" class="paginate_button" aria-controls="ListDatatableView" data-dt-idx="@i" tabindex="0">@i</a>
+                }
+            }
+        }
+        else
+        {
+            for (int i = (Model.CurrentPage + 1); i <= Model.RoundPageCount; i++)
+            {
+                if (i <= Model.RoundPageCount)
+                {
+
+                    <a href="@Model.Url?pageId=@i@filterUrl" class="paginate_button" aria-controls="ListDatatableView" data-dt-idx="@i" tabindex="0">@i</a>
+                }
+            }
+        }
+
+    </span>
+
+    @if ((int)Model.CurrentPage < Model.RoundPageCount)
+    {
+        <a href="@Model.Url?pageId=@((int)Model.CurrentPage + 1)@filterUrl" class="paginate_button next" aria-controls="ListDatatableView" data-dt-idx="@((int)Model.CurrentPage + 1)" tabindex="0" id="ListDatatableView_next">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        </a>
+    }
+    else
+    {
+        <a class="paginate_button next disabled" aria-controls="ListDatatableView" data-dt-idx="@((int)Model.CurrentPage + 1)" tabindex="0" id="ListDatatableView_next">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        </a>
+    }
+
+
+</div>

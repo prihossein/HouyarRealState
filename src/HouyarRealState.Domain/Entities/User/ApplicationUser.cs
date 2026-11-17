@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using HouyarRealState.Domain.Entities.Article;
 using HouyarRealState.Domain.Entities.Properties;
 using Microsoft.AspNetCore.Identity;
 
@@ -32,7 +31,6 @@ namespace HouyarRealState.Domain.Entities.User
         public DateTime LastOTPSentDate { get; set; }
 
         #region Relation
-        public virtual ICollection<Blog> Blogs { get; set; }
         public virtual ICollection<Property> Properties { get; set; }
         #endregion
     }

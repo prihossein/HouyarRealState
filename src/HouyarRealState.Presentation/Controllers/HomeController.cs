@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using HouyarRealState.Application.Services;
+using HouyarRealState.Infrastructure.Identity;
 using HouyarRealState.Presentation.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HouyarRealState.Presentation.Controllers
@@ -14,31 +16,9 @@ namespace HouyarRealState.Presentation.Controllers
         }
 
 
-        [Route("/{languageCulture?}")]
-        public async Task<IActionResult> Index(string? languageCulture)
+        [Authorize(Roles = $"{UserRoleNames.Owner}, {UserRoleNames.Administrator}")]
+        public async Task<IActionResult> Index()
         {
-
-
-
-            if (!string.IsNullOrWhiteSpace(languageCulture)) 
-            {
-                if (languageCulture.ToLower() == LanguageCultures.Persian.ToLower() || languageCulture.ToLower() == LanguageCultures.English.ToLower() || languageCulture.ToLower() == LanguageCultures.Arabic.ToLower() || languageCulture.ToLower() == LanguageCultures.Turkish.ToLower()) 
-                {
-                    ViewData["LanguageCulture"] =  await _languageService.ChangeLanguageAsync(languageCulture, HttpContext);
-                }
-
-            }
-            else
-            {
-                ViewData["LanguageCulture"] = await _languageService.GetLanguageCultureAsync(HttpContext);
-            }
-
-            
-
-            if ((string)ViewData["LanguageCulture"] != LanguageCultures.Persian)
-            {
-                ViewData["ChangeUrl"] = $"/{ViewData["LanguageCulture"]}";
-            }
 
             return View();
         }
@@ -47,6 +27,19 @@ namespace HouyarRealState.Presentation.Controllers
         {
             return View();
         }
+
+
+        #region GetRandomWordsOfElders
+        public IActionResult GetRandomWordsOfElders()
+        {
+            return Json(new
+            {
+                status = true,
+                randomWordsOfElders = WordsOfEldersTools.GetRandomWordsOfElders()
+            });
+        }
+        #endregion
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error(string languageCulture = LanguageCultures.Persian)

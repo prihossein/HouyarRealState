@@ -56,16 +56,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.User
 
             builder.HasIndex(x => x.Mobile);
 
-            // Relations
-            builder.HasMany(x => x.Blogs)
-                .WithOne(x => x.Author)
-                .HasForeignKey(x => x.AspNetUserId)
-                .OnDelete(DeleteBehavior.NoAction);
 
-            builder.HasMany(x => x.Properties)
-                .WithOne(x => x.Author)
-                .HasForeignKey(x => x.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

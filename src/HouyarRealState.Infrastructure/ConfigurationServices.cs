@@ -30,8 +30,6 @@ namespace HouyarRealState.Infrastructure
             services.AddHttpClient();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICacheManagerService, CacheManagerService>();
-            services.AddTransient<ILanguageRepository, LanguageRepository>();
-            services.AddTransient<IFooterRepository, FooterRepository>();
             services.AddTransient<ILanguageService, LanguageService>();
             services.AddMemoryCache();
             services.AddMediatR(x => x.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
@@ -61,9 +59,9 @@ namespace HouyarRealState.Infrastructure
 
             services.ConfigureApplicationCookie(options =>
             {
-                options.LogoutPath = "/Account/Logout";
-                options.LoginPath = "/Account/Login";
-                options.AccessDeniedPath = "/Account/AccessDenied";
+                options.LogoutPath = "/Logout";
+                options.LoginPath = "/Login";
+                options.AccessDeniedPath = "/AccessDenied";
                 options.Cookie.Name = "Cookie";
                 options.ClaimsIssuer = ClaimsIdentity.DefaultIssuer;
                 options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;

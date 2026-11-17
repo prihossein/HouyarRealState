@@ -1,0 +1,11 @@
+﻿@using HouyarRealState.Application.Helpers
+
+@{
+    var WordsOfElders = WordsOfEldersTools.GetRandomWordsOfElders();
+}
+
+<div class="footer">
+    <div class="copyright">
+        <p>@Html.Raw(WordsOfElders.Words)<strong>@Html.Raw($" «{WordsOfElders.Speaker}»")</strong></p>
+    </div>
+</div> 
