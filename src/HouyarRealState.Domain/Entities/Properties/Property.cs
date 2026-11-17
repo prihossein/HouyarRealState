@@ -45,7 +45,11 @@ namespace HouyarRealState.Domain.Entities.Properties
         // حداکثر قیمت کل ملک
         public double? MaxTotalPrice { get; set; }
 
+        // عرض جغرافیایی (Latitude)
+        public double? Latitude { get; set; }
 
+        // طول جغرافیایی (Longitude)
+        public double? Longitude { get; set; }
 
         // مساحت کل ملک بر حسب مترمربع
         public decimal Area { get; set; }
