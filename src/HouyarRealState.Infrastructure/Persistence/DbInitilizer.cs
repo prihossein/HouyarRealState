@@ -10,6 +10,7 @@ namespace HouyarRealState.Infrastructure.Persistence
         public static async Task Seed(this ApplicationDbContext dbContext)
         {
             dbContext.Database.EnsureCreated();
+            await SeedDatas.SeedPropertyRequestTypeAsync(dbContext);
             await SeedDatas.SeedPropertyFeaturesAsync(dbContext);
             await SeedDatas.SeedTransactionTypesAsync(dbContext);
             await SeedDatas.SeedPropertyTypesAsync(dbContext);

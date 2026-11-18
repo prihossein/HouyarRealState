@@ -15,9 +15,11 @@ namespace HouyarRealState.Infrastructure.Persistence
         }
 
         public DbSet<Property> Properties { get; set; }
+        public DbSet<PropertyStatus> PropertyStatuses { get; set; }
         public DbSet<PropertyFeature> PropertyFeatures { get; set; }
         public DbSet<PropertyInFeature> PropertyInFeatures { get; set; }
-        public DbSet<PropertyType> PropertyCategories { get; set; }
+        public DbSet<PropertyType> PropertyTypes { get; set; }
+        public DbSet<PropertyRequestType> PropertyRequestTypes { get; set; }
         public DbSet<TransactionType> TransactionTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

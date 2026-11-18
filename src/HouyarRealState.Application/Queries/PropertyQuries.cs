@@ -4,5 +4,5 @@ using MediatR;
 
 namespace HouyarRealState.Application.Queries
 {
-    public record GetPropertiesQuery(int pageId = 1, Guid? filterPropertyTypeId = null, Guid? filterTransactionTypeId = null, string? filterTilte = null, DateTime? startCreateDate = null, DateTime? endCreateDate = null) : IRequest<Result<Tuple<List<PropertyDTO>, int>>>;
+    public record GetPropertiesQuery(int pageId = 1, Guid? filterPropertyTypeId = null, Guid? filterPropertyRequestId = null, Guid? filterTransactionTypeId = null, string? filterTilte = null, string? startCreateDate = null, string? endCreateDate = null) : IRequest<Result<Tuple<List<PropertyDTO>, int>>>;
 }

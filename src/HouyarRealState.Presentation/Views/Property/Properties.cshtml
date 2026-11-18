@@ -1,6 +1,6 @@
 ﻿@using HouyarRealState.Application.DTOs
 @using HouyarRealState.Application.DTOs.Properties
-@model Tuple<List<PropertyDTO>, int>
+@model PropertyForDashboardDTO
 
 
 @{
@@ -31,10 +31,48 @@
                 <div class="card-body filter-body hide-area">
                     <div class="basic-form">
                         <form>
+
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label>@Html.Raw("عنوان ملک")</label>
-                                    <input type="text" class="form-control" name="propertyTitle" value="@ViewBag.PropertyTitle" placeholder="@Html.Raw("عنوان ملک")">
+                                    <label for="filterTitle">@Html.Raw("عنوان ملک")</label>
+                                    <input type="text" class="form-control" name="filterTitle" id="filterTitle" value="@ViewBag.filterTitle" placeholder="@Html.Raw("نام ملک")">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+
+
+                                <div class="form-group col-md-4">
+                                    <label for="filterPropertyTypeId">@Html.Raw("نوع ملک")</label>
+                                    <select id="filterPropertyTypeId" name="filterPropertyTypeId" class="form-control">
+                                        <option>همه</option>
+                                        @foreach (var propertyType in Model.PropertyTypes)
+                                        {
+                                            <option  value="@propertyType.Id">@propertyType.Title</option>
+                                        }
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="filterTransactionTypeId">@Html.Raw("نوع معامله")</label>
+                                    <select id="filterTransactionTypeId" name="filterTransactionTypeId" class="form-control">
+                                        <option>همه</option>
+                                        @foreach (var transactionType in Model.TransactionTypes)
+                                        {
+                                            <option value="@transactionType.Id">@transactionType.Title</option>
+                                        }
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="filterPropertyRequestId">@Html.Raw("نوع درخواست")</label>
+                                    <select id="filterPropertyRequestId" name="filterPropertyRequestId" class="form-control">
+                                        <option>همه</option>
+                                        @foreach (var propertyRequestType in Model.PropertyRequestTypes)
+                                        {
+                                            <option value="@propertyRequestType.Id">@propertyRequestType.Title</option>
+                                        }
+                                    </select>
                                 </div>
                             </div>
                             <a asp-controller="Property" asp-action="Properties" class="btn btn-default">@Html.Raw("بدون فیلتر")</a>
@@ -51,7 +89,7 @@
         <div class="card-header d-sm-flex d-block">
             <div class="mr-auto mb-sm-0 mb-3">
                 <h4 class="card-title mb-2">@Html.Raw("لیست ملک‌ها")</h4>
-                <span><b>@Html.Raw("تعداد کل ملک‌ها: ")</b>0</span>
+                <span><b>@Html.Raw("تعداد کل ملک‌ها: ")</b>@Model.CountProperties</span>
             </div>
 
             <a asp-controller="Property" asp-action="ExportPropertiesToExcel" class="btn btn-outline-success mb-2 mr-2">
@@ -59,10 +97,10 @@
                 <svg width="24px" height="24px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>file_type_excel2</title><path d="M28.781,4.405H18.651V2.018L2,4.588V27.115l16.651,2.868V26.445H28.781A1.162,1.162,0,0,0,30,25.349V5.5A1.162,1.162,0,0,0,28.781,4.405Zm.16,21.126H18.617L18.6,23.642h2.487v-2.2H18.581l-.012-1.3h2.518v-2.2H18.55l-.012-1.3h2.549v-2.2H18.53v-1.3h2.557v-2.2H18.53v-1.3h2.557v-2.2H18.53v-2H28.941Z" style="fill:#20744a;fill-rule:evenodd" /><rect x="22.487" y="7.439" width="4.323" height="2.2" style="fill:#20744a" /><rect x="22.487" y="10.94" width="4.323" height="2.2" style="fill:#20744a" /><rect x="22.487" y="14.441" width="4.323" height="2.2" style="fill:#20744a" /><rect x="22.487" y="17.942" width="4.323" height="2.2" style="fill:#20744a" /><rect x="22.487" y="21.443" width="4.323" height="2.2" style="fill:#20744a" /><polygon points="6.347 10.673 8.493 10.55 9.842 14.259 11.436 10.397 13.582 10.274 10.976 15.54 13.582 20.819 11.313 20.666 9.781 16.642 8.248 20.513 6.163 20.329 8.585 15.666 6.347 10.673" style="fill:#ffffff;fill-rule:evenodd" /></svg>
             </a>
 
-            <a href="javscript:void(0)" data-toggle="modal" data-target="#modalAdd" class="btn btn-info">@Html.Raw("افزودن ملک +")</a>
+            <a asp-controller="Property" asp-action="AddProperty" class="btn btn-info">@Html.Raw("افزودن ملک +")</a>
         </div>
         <div class="card-body">
-            @if (Model.Item1.Count() > 0)
+            @if (Model.Properties.Item1.Count() > 0)
             {
                 <div class="table-responsive" style="height:500px;">
                     <table class="table table-sm mb-0 table-striped">
@@ -81,7 +119,7 @@
                         </thead>
                         <tbody id="customers">
 
-                            @foreach (var item in Model.Item1)
+                            @foreach (var item in Model.Properties.Item1)
                             {
                                 <tr class="btn-reveal-trigger">
                                     <td class="py-2">
@@ -95,99 +133,7 @@
                                             </div>
                                         </div>
                                     </td>
-@*                                     <td class="py-2">@Html.Raw(item.ModifyDate.Value.ToShamsiLong())</td>
-                                    <td class="py-3">
-                                        <div class="media style-1">
 
-                                            @if (string.IsNullOrWhiteSpace(item.SmallThumbnailImageName))
-                                            {
-                                                <img src="/Upload/Blogs/DefaultBlog.jpg" class="img-fluid mr-2">
-                                            }
-                                            else
-                                            {
-                                                <img src="/Upload/Blogs/@item.BlogCode/@item.SmallThumbnailImageName" class="img-fluid mr-2">
-                                            }
-
-
-
-                                            <div class="media-body">
-                                                <h6>
-                                                    <a href="/Blog/@Html.Raw(item.Url)" target="_blank">
-                                                        @Html.Raw(item.BlogTitle)
-                                                    </a>
-                                                </h6>
-                                            </div>
-
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        @if (item.BlogFAQsCount > 0)
-                                        {
-                                            <span class="badge badge-success">@item.BlogFAQsCount</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-warning">ندارد</span>
-                                        }
-                                    </td>
-
-                                    <td>
-                                        @item.StatiscticCount
-                                    </td>
-                                    <td>
-                                        @if (item.IsDraft)
-                                        {
-                                            <span class="badge badge-warning">@Html.Raw("پیش نویس")</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-success">@Html.Raw("منتشر شده")</span>
-                                        }
-                                    </td>
-
-
-                                    @if (item.TextStatistics.WordCount > 0)
-                                    {
-                                        <td>
-                                            @item.TextStatistics.WordCount.ToString("#,0")
-                                        </td>
-                                    }
-                                    else
-                                    {
-                                        <td>
-                                            <span class="badge badge-danger">@Html.Raw("بدون متن")</span>
-                                        </td>
-
-                                    }
-
-                                    @if (item.TextStatistics.InternalLinkCount > 0)
-                                    {
-                                        <td>
-                                            @item.TextStatistics.InternalLinkCount.ToString("#,0")
-                                        </td>
-                                    }
-                                    else
-                                    {
-                                        <td>
-                                            <span class="badge badge-warning">@Html.Raw("بدون لینک داخلی")</span>
-                                        </td>
-
-                                    }
-
-                                    @if (item.TextStatistics.ExternalLinkCount > 0)
-                                    {
-                                        <td>
-                                            @item.TextStatistics.InternalLinkCount.ToString("#,0")
-                                        </td>
-                                    }
-                                    else
-                                    {
-                                        <td>
-                                            <span class="badge badge-warning">@Html.Raw("بدون لینک خارجی")</span>
-                                        </td>
-
-                                    } *@
 
                                 </tr>
                             }
@@ -195,7 +141,7 @@
                     </table>
                 </div>
 
-                if (Model.Item2 > 1)
+                if (Model.Properties.Item2 > 1)
                 {
                     PagingViewModel pagingModel = ViewBag.Paging as PagingViewModel;
                     <partial name="_PagingAdmin" model="pagingModel" />
@@ -215,19 +161,19 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">@Html.Raw("حذف نوشته")</h5>
+                <h5 class="modal-title">@Html.Raw("حذف ملک")</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
             </div>
             <div class="modal-body">
-                <h5><i class="fa fa-warning text-danger"></i> @Html.Raw("آیا از حذف این نوشته اطمینان دارید؟")</h5>
-                <p>@Html.Raw("توجه داشته باشید نوشته حذف شده، غیر قابل بازیابی می باشد!")</p>
+                <h5><i class="fa fa-warning text-danger"></i> @Html.Raw("آیا از حذف این ملک اطمینان دارید؟")</h5>
+                <p>@Html.Raw("توجه داشته باشید ملک حذف شده، غیر قابل بازیابی می باشد!")</p>
             </div>
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-danger light" data-dismiss="modal">بستن</button>
-                <form asp-area="Admin" asp-controller="Blog" asp-action="DeleteBlog" method="post">
-                    <input type="hidden" id="blogId" name="blogId" />
-                    <button type="submit" class="btn btn-danger">@Html.Raw("حذف نوشته")</button>
+                <form id="frmDelete" method="post">
+                    <input type="hidden" id="propertyId" name="propertyId" />
+                    <button type="submit" class="btn btn-danger">@Html.Raw("حذف ملک")</button>
                 </form>
 
             </div>

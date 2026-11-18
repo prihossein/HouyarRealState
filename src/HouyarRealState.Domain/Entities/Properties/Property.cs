@@ -14,22 +14,21 @@ namespace HouyarRealState.Domain.Entities.Properties
 
         // نوع معامله: خرید، فروش، رهن، اجاره، تهاطر و ...
         public Guid TransactionTypeId { get; set; }
+        public Guid PropertyStatusId { get; set; }
 
 
         // عنوان آگهی ملک
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; } = string.Empty;
 
         // توضیحات کامل ملک
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; } = string.Empty;
 
         // کد نوسازی ملک در شهرداری
         public string? RenovationCode { get; set; }
 
-        // وضعیت آگهی: پیش‌نویس، منتشرشده، فروخته‌شده، اجاره‌رفته و غیره
-        public string Status { get; set; } = "Draft";
 
-        // مشخص می‌کند آگهی تأیید شده است یا خیر
-        public bool IsApproved { get; set; }
+
+        public bool IsDraft { get; set; }
 
         public DateTime CreateDate { get; set; }
         public DateTime ModifyDate { get; set; }
@@ -54,7 +53,7 @@ namespace HouyarRealState.Domain.Entities.Properties
         public double? Longitude { get; set; }
 
         // مساحت کل ملک بر حسب مترمربع
-        public decimal Area { get; set; }
+        public decimal? Area { get; set; }
 
         // مساحت زیربنا بر حسب مترمربع
         public decimal? BuiltArea { get; set; }
@@ -63,7 +62,9 @@ namespace HouyarRealState.Domain.Entities.Properties
         #region Relations
         public virtual ApplicationUser Creator { get; set; }
         public virtual PropertyType PropertyType { get; set; }
+        public virtual TransactionType TransactionType { get; set; }
         public virtual PropertyRequestType PropertyRequestType { get; set; }
+        public virtual PropertyStatus PropertyStatus { get; set; }
         public virtual ICollection<PropertyInFeature> PropertyInFeatures { get; set; }
         #endregion
 

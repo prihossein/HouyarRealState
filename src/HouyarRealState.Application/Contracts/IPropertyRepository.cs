@@ -6,6 +6,7 @@ namespace HouyarRealState.Application.Contracts
 {
     public interface IPropertyRepository : IGenericRepository<Property>
     {
+        Task<PropertyForDashboardDTO> GetPropertiesForDashboard(int pageId = 1, Guid? filterPropertyTypeId = null, Guid? filterPropertyRequestId = null, Guid? filterTransactionTypeId = null, string? filterTilte = null, string? startCreateDate = null, string? endCreateDate = null);
         Task<int> CountPropertiesAsync(Expression<Func<Property, bool>> predicate);
         Task CreateAsync(PropertyDTO dto);
 

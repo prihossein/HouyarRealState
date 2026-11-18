@@ -5,8 +5,81 @@ namespace HouyarRealState.Infrastructure.Persistence.SeedData
     public static class SeedDatas
     {
 
-        public static async Task SeedPropertyFeaturesAsync(
-    ApplicationDbContext dbContext)
+
+        public static async Task SeedPropertyStatusAsync(ApplicationDbContext dbContext)
+        {
+            var propertyStatuses = new List<PropertyStatus>
+    {
+        new PropertyStatus
+        {
+                    Id = Guid.Parse("50000000-0000-0000-0000-000000000001"),
+                    Title = "در حال اجرا"
+        },
+        new PropertyStatus
+        {
+                    Id = Guid.Parse("50000000-0000-0000-0000-000000000002"),
+                    Title = "پایان یافته"
+        }};
+
+            var existingTitles = await dbContext.Set<PropertyStatus>()
+                .Select(pf => pf.Title)
+                .ToListAsync();
+
+            var newPropertyStatuses = propertyStatuses
+                .Where(pf => !existingTitles.Contains(pf.Title))
+                .ToList();
+
+            if (newPropertyStatuses.Any())
+            {
+                await dbContext.Set<PropertyStatus>()
+                    .AddRangeAsync(newPropertyStatuses);
+
+                await dbContext.SaveChangesAsync();
+            }
+        }
+
+
+
+        public static async Task SeedPropertyRequestTypeAsync(ApplicationDbContext dbContext)
+        {
+            var now = DateTime.UtcNow;
+
+            var propertyRequestTypes = new List<PropertyRequestType>
+    {
+        new PropertyRequestType
+        {
+                    Id = Guid.Parse("10000000-0000-0000-0000-000000000001"),
+                    Title = "عرضه ملک",
+                    Code = "Offer",
+        },
+        new PropertyRequestType
+        {
+                    Id = Guid.Parse("10000000-0000-0000-0000-000000000002"),
+                    Title = "تقاضای ملک",
+                    Code = "Demand",
+        }};
+
+            var existingTitles = await dbContext.Set<PropertyRequestType>()
+                .Select(pf => pf.Title)
+                .ToListAsync();
+
+            var newPropertyRequestTypes = propertyRequestTypes
+                .Where(pf => !existingTitles.Contains(pf.Title))
+                .ToList();
+
+            if (newPropertyRequestTypes.Any())
+            {
+                await dbContext.Set<PropertyRequestType>()
+                    .AddRangeAsync(newPropertyRequestTypes);
+
+                await dbContext.SaveChangesAsync();
+            }
+        }
+
+
+
+
+        public static async Task SeedPropertyFeaturesAsync(ApplicationDbContext dbContext)
         {
             var now = DateTime.UtcNow;
 

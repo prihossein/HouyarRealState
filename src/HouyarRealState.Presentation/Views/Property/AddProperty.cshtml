@@ -1,0 +1,131 @@
+﻿@model HouyarRealState.Application.DTOs.Properties.AddPropertyDTO
+
+@{
+    ViewData["Title"] = Html.Raw("افزودن ملک");
+}
+
+<div class="container-fluid">
+
+
+    <!-- Add Project -->
+    <div class="row page-titles mx-0">
+        <div class="col-sm-6 p-md-0">
+            <div class="welcome-text">
+                <h4>@ViewData["Title"]</h4>
+                <p class="mb-0">@Html.Raw("برای ثبت ملک جدید فرم زیر را با دقت پر کنید. موارد ستاره دارد اجباری می باشند.")</p>
+            </div>
+        </div>
+        <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Admin" asp-action="Admin">@Html.Raw("داشبورد")</a></li>
+                <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Property" asp-action="Properties">@Html.Raw("ملک‌ها")</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">@ViewData["Title"]</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- row -->
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@Html.Raw($"فرم ثبت ملک")</h4>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        <form id="frmAddProperty" method="post" enctype="multipart/form-data">
+                            <div class="row">
+
+                                <div class="col-12 col-md-9">
+
+                                    <div class="form-group">
+                                        <label asp-for="Title" class="form-label" for="Title">عنوان</label>
+                                        <input type="text" asp-for="Title" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="Description" class="form-label" for="Description">توضیحات</label>
+                                        <textarea asp-for="Description"></textarea>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 col-md-3">
+
+                                    <div class="form-group">
+                                        <label asp-for="Area" class="form-label" for="Area">مساحت کل</label>
+                                        <input type="text" asp-for="Area" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="BuiltArea" class="form-label" for="BuiltArea">مساحت زیربنا</label>
+                                        <input type="text" asp-for="BuiltArea" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="RenovationCode" class="form-label" for="RenovationCode">کد نوسازی</label>
+                                        <input type="text" asp-for="RenovationCode" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label asp-for="MinPricePerMeter" class="form-label" for="MinPricePerMeter">حداقل قیمت هر متر</label>
+                                        <input type="text" asp-for="MinPricePerMeter" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="MaxPricePerMeter" class="form-label" for="MaxPricePerMeter">حداکثر قیمت هر متر</label>
+                                        <input type="text" asp-for="MaxPricePerMeter" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="MinTotalPrice" class="form-label" for="MinTotalPrice">حداقل قیمت کل</label>
+                                        <input type="text" asp-for="MinTotalPrice" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="MaxTotalPrice" class="form-label" for="MaxTotalPrice">حداکثر قیمت کل</label>
+                                        <input type="text" asp-for="MaxTotalPrice" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="Latitude" class="form-label" for="Latitude">طول جغرافیایی</label>
+                                        <input type="text" asp-for="Latitude" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="Longitude" class="form-label" for="Longitude">عرض جغرافیایی جغرافیایی</label>
+                                        <input type="text" asp-for="Longitude" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-12">
+                                    <a asp-controller="Property" asp-action="Properties" class="btn btn-light">@Html.Raw("انصراف")</a>
+                                    <button type="submit" class="btn btn-primary">@Html.Raw("افزودن ملک") <i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section _Scripts {
+
+    <script src="/Plugins/ckeditor/ckeditor.js"></script>
+    <script src="/js/addProperty.js"></script>
+    <script>
+        CKEDITOR.replace('Description', {
+            customConfig: '/Plugins/ckeditor/config.js'
+
+        });
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
