@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IZautWb2S2w=",
+  "dgSpecHash": "DFmJAFdmgRU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Hossein\\.nuget\\packages\\automapper\\16.2.0\\automapper.16.2.0.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\automapper\\17.0.0\\automapper.17.0.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\fluentvalidation\\12.2.0\\fluentvalidation.12.2.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.2.0\\fluentvalidation.dependencyinjectionextensions.12.2.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\htmlagilitypack\\1.12.4\\htmlagilitypack.1.12.4.nupkg.sha512",
@@ -101,40 +101,13 @@
   ],
   "logs": [
     {
-      "code": "NU1903",
+      "code": "NU1900",
       "level": "Warning",
-      "message": "Package 'AutoMapper' 16.2.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6vhm-j9h7-f9gh",
+      "message": "Error occurred while getting package vulnerability data: The download of 'https://api.nuget.org/v3-vulnerabilities/2026.11.14.05.29.55/vulnerability.base.json' timed out because no data was received for 60000ms.",
       "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "Package 'AutoMapper' 16.2.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-gpwp-5797-mjff",
-      "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "message": "Package 'Microsoft.AspNetCore.WebUtilities' 2.3.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6527-9fp8-r4x6",
-      "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
-      "libraryId": "Microsoft.AspNetCore.WebUtilities",
-      "targetGraphs": [
-        "net10.0"
-      ]
+      "targetGraphs": []
     }
   ]
 }

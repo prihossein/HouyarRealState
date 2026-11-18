@@ -7,6 +7,8 @@ namespace HouyarRealState.Domain.Entities.Properties
         // شناسه کاربری که آگهی ملک را ثبت کرده است
         public Guid UserId { get; set; }
 
+        public Guid PropertyRequestTypeId { get; set; }
+
         // نوع ملک: آپارتمان، خانه، ویلا، زمین، مغازه و غیره
         public Guid PropertyTypeId { get; set; }
 
@@ -61,6 +63,7 @@ namespace HouyarRealState.Domain.Entities.Properties
         #region Relations
         public virtual ApplicationUser Creator { get; set; }
         public virtual PropertyType PropertyType { get; set; }
+        public virtual PropertyRequestType PropertyRequestType { get; set; }
         public virtual ICollection<PropertyInFeature> PropertyInFeatures { get; set; }
         #endregion
 

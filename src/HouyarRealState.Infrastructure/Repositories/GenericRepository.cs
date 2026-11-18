@@ -1,9 +1,4 @@
-﻿using System.Linq.Expressions;
-using AutoMapper;
-using HouyarRealState.Application.Contracts;
-using HouyarRealState.Domain.Common;
-using HouyarRealState.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
+﻿using HouyarRealState.Domain.Common;
 
 namespace HouyarRealState.Infrastructure.Repositories
 {

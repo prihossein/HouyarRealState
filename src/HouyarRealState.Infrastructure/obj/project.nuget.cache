@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jBm5ICDtX6k=",
+  "dgSpecHash": "FjXa5c8lFjU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Hossein\\.nuget\\packages\\automapper\\16.2.0\\automapper.16.2.0.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\automapper\\17.0.0\\automapper.17.0.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\fluentvalidation\\12.2.0\\fluentvalidation.12.2.0.nupkg.sha512",
@@ -15,9 +15,9 @@
     "C:\\Users\\Hossein\\.nuget\\packages\\mediatr\\14.2.0\\mediatr.14.2.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.3.12\\microsoft.aspnetcore.antiforgery.2.3.12.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.3.11\\microsoft.aspnetcore.authentication.2.3.11.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.3.12\\microsoft.aspnetcore.authentication.2.3.12.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.3.10\\microsoft.aspnetcore.authentication.abstractions.2.3.10.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.3.12\\microsoft.aspnetcore.authentication.cookies.2.3.12.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.3.13\\microsoft.aspnetcore.authentication.cookies.2.3.13.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.3.11\\microsoft.aspnetcore.authentication.core.2.3.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.13\\microsoft.aspnetcore.authentication.jwtbearer.10.0.13.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.3.10\\microsoft.aspnetcore.authorization.2.3.10.nupkg.sha512",
@@ -27,14 +27,14 @@
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.3.11\\microsoft.aspnetcore.dataprotection.2.3.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.dataprotection.abstractions\\2.3.10\\microsoft.aspnetcore.dataprotection.abstractions.2.3.10.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.abstractions\\2.3.12\\microsoft.aspnetcore.diagnostics.abstractions.2.3.12.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.3.12\\microsoft.aspnetcore.hosting.abstractions.2.3.12.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.3.11\\microsoft.aspnetcore.hosting.server.abstractions.2.3.11.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.3.13\\microsoft.aspnetcore.hosting.abstractions.2.3.13.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.3.12\\microsoft.aspnetcore.hosting.server.abstractions.2.3.12.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.3.12\\microsoft.aspnetcore.html.abstractions.2.3.12.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.http\\2.3.11\\microsoft.aspnetcore.http.2.3.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.13\\microsoft.aspnetcore.http.abstractions.2.3.13.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.3.11\\microsoft.aspnetcore.http.extensions.2.3.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.http.features\\6.0.0-preview.4.21253.5\\microsoft.aspnetcore.http.features.6.0.0-preview.4.21253.5.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.3.13\\microsoft.aspnetcore.identity.2.3.13.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.3.14\\microsoft.aspnetcore.identity.2.3.14.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\10.0.13\\microsoft.aspnetcore.identity.entityframeworkcore.10.0.13.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\2.3.11\\microsoft.aspnetcore.jsonpatch.2.3.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.3.13\\microsoft.aspnetcore.mvc.abstractions.2.3.13.nupkg.sha512",
@@ -45,7 +45,7 @@
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.responsecaching.abstractions\\2.3.11\\microsoft.aspnetcore.responsecaching.abstractions.2.3.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.routing\\2.3.11\\microsoft.aspnetcore.routing.2.3.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.routing.abstractions\\2.3.12\\microsoft.aspnetcore.routing.abstractions.2.3.12.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.3.11\\microsoft.aspnetcore.webutilities.2.3.11.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\10.0.15\\microsoft.aspnetcore.webutilities.10.0.15.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.bcl.cryptography\\10.0.2\\microsoft.bcl.cryptography.10.0.2.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
@@ -85,7 +85,7 @@
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.extensions.objectpool\\8.0.11\\microsoft.extensions.objectpool.8.0.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.extensions.options\\10.0.13\\microsoft.extensions.options.10.0.13.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\10.0.13\\microsoft.extensions.options.configurationextensions.10.0.13.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.13\\microsoft.extensions.primitives.10.0.13.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.15\\microsoft.extensions.primitives.10.0.15.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.extensions.webencoders\\8.0.11\\microsoft.extensions.webencoders.8.0.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.identity.client\\4.84.2\\microsoft.identity.client.4.84.2.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.identity.client.broker\\4.84.2\\microsoft.identity.client.broker.4.84.2.nupkg.sha512",
@@ -97,7 +97,7 @@
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.19.2\\microsoft.identitymodel.protocols.8.19.2.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.19.2\\microsoft.identitymodel.protocols.openidconnect.8.19.2.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.19.2\\microsoft.identitymodel.tokens.8.19.2.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.net.http.headers\\2.3.12\\microsoft.net.http.headers.2.3.12.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.net.http.headers\\10.0.15\\microsoft.net.http.headers.10.0.15.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.13\\microsoft.win32.systemevents.10.0.13.nupkg.sha512",
@@ -117,49 +117,23 @@
     "C:\\Users\\Hossein\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.11\\system.configuration.configurationmanager.9.0.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.11\\system.diagnostics.eventlog.9.0.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\system.drawing.common\\10.0.13\\system.drawing.common.10.0.13.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\system.formats.asn1\\11.0.0\\system.formats.asn1.11.0.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.19.2\\system.identitymodel.tokens.jwt.8.19.2.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\system.io.hashing\\8.0.0\\system.io.hashing.8.0.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\system.memory.data\\8.0.1\\system.memory.data.8.0.1.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.13\\system.security.cryptography.pkcs.10.0.13.nupkg.sha512",
+    "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.pkcs\\11.0.0\\system.security.cryptography.pkcs.11.0.0.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512",
-    "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.xml\\10.0.13\\system.security.cryptography.xml.10.0.13.nupkg.sha512"
+    "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.xml\\11.0.0\\system.security.cryptography.xml.11.0.0.nupkg.sha512"
   ],
   "logs": [
     {
-      "code": "NU1903",
+      "code": "NU1900",
       "level": "Warning",
-      "message": "Package 'AutoMapper' 16.2.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6vhm-j9h7-f9gh",
+      "message": "Error occurred while getting package vulnerability data: The download of 'https://api.nuget.org/v3-vulnerabilities/2026.11.14.05.29.55/vulnerability.base.json' timed out because no data was received for 60000ms.",
       "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "Package 'AutoMapper' 16.2.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-gpwp-5797-mjff",
-      "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "message": "Package 'Microsoft.AspNetCore.WebUtilities' 2.3.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6527-9fp8-r4x6",
-      "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Infrastructure\\HouyarRealState.Infrastructure.csproj",
-      "libraryId": "Microsoft.AspNetCore.WebUtilities",
-      "targetGraphs": [
-        "net10.0"
-      ]
+      "targetGraphs": []
     }
   ]
 }

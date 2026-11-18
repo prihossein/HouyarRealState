@@ -21,7 +21,7 @@ namespace HouyarRealState.Infrastructure.Middlewares
                 }
 
 
-                context.Seed();
+              await  context.Seed();
                 
 
             }

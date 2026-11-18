@@ -30,9 +30,9 @@
     width: 100px;
 }
 
-.website-logo .logo {
-    background-image: url("../images/logo-light.svg");
-}
+    .website-logo .logo {
+        background-image: url("../../img/logo.png");
+    }
 
 .website-logo .logo img {
     width: 100px;
@@ -43,7 +43,7 @@
 }
 
 .website-logo-inside .logo {
-    background-image: url("../images/logo-light.svg");
+    background-image: url("../../img/logo.png");
 }
 
 .website-logo-inside .logo img {
@@ -448,11 +448,11 @@
         bottom: initial;
     }
 
-    .website-logo .logo {
-        background-image: url("../images/logo-light.svg");
-    }
+        .website-logo .logo {
+            background-image: url("../../img/logo.png");
+        }
 
     .form-body.without-side .website-logo .logo {
-        background-image: url("../images/logo-light.svg");
+        background-image: url("../../img/logo.png");
     }
 }

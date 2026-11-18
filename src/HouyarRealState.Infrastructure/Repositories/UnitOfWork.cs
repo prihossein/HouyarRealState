@@ -9,7 +9,7 @@ namespace HouyarRealState.Infrastructure.Repositories
         private readonly IMapper _mapper;
 
         #region Repositories
-
+        public IPropertyRepository PropertyRepository { get; private set; }
         #endregion
 
         private readonly ICacheManagerService _cacheManagerService;
@@ -18,6 +18,7 @@ namespace HouyarRealState.Infrastructure.Repositories
             _context = context;
             _mapper = mapper;
             _cacheManagerService = cacheManagerService;
+            PropertyRepository = new PropertyRepository(_context, _mapper, _cacheManagerService);
 
         }
 

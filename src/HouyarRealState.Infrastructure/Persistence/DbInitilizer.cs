@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using HouyarRealState.Domain.Entities.User;
+﻿using HouyarRealState.Domain.Entities.User;
 using HouyarRealState.Infrastructure.Identity;
+using HouyarRealState.Infrastructure.Persistence.SeedData;
 using Microsoft.AspNetCore.Identity;
 
 namespace HouyarRealState.Infrastructure.Persistence
@@ -12,7 +10,9 @@ namespace HouyarRealState.Infrastructure.Persistence
         public static async Task Seed(this ApplicationDbContext dbContext)
         {
             dbContext.Database.EnsureCreated();
-
+            await SeedDatas.SeedPropertyFeaturesAsync(dbContext);
+            await SeedDatas.SeedTransactionTypesAsync(dbContext);
+            await SeedDatas.SeedPropertyTypesAsync(dbContext);
             if (dbContext.Roles.Any())
             {
                 return;

@@ -2647,6 +2647,7 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\plugins\undo\lang\fi.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\core\plugins.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\plugins\colordialog\lang\es.js
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\js\properties.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\plugins\sourcearea\lang\el.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\plugins\notification\lang\fa.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\iofrm\images\graphic5.svg
@@ -6729,6 +6730,7 @@ wwwroot\iofrm\webfonts\iranyekanwebregular.woff2
 wwwroot\js\copyrightAdmin.js
 wwwroot\js\index.js
 wwwroot\js\login.js
+wwwroot\js\properties.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\LICENSE
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
