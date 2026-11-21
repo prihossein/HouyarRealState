@@ -3,12 +3,14 @@
     public class AddPropertyDTO
     {
         // شناسه کاربری که آگهی ملک را ثبت کرده است
-        public Guid UserId { get; set; }
+        public Guid AgentId { get; set; }
 
         public Guid PropertyRequestTypeId { get; set; }
 
         // نوع ملک: آپارتمان، خانه، ویلا، زمین، مغازه و غیره
         public Guid PropertyTypeId { get; set; }
+
+        public Guid PropertyStatusId { get; set; }
 
         // نوع معامله: خرید، فروش، رهن، اجاره، تهاطر و ...
         public Guid TransactionTypeId { get; set; }
@@ -48,6 +50,9 @@
 
         // طول جغرافیایی (Longitude)
         public double? Longitude { get; set; }
+
+        public string Address { get; set; }
+        public string? OwnerMobileNumber { get; set; }
 
         // مساحت کل ملک بر حسب مترمربع
         public decimal Area { get; set; }

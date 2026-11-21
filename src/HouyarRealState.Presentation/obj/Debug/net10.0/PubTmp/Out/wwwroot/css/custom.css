@@ -1,0 +1,29 @@
+﻿input[type="number"],
+input[type="password"],
+input[type="email"] {
+    text-align: left !important;
+    direction: ltr;
+}
+
+
+    input[type="number"]::placeholder,
+    input[type="password"]::placeholder,
+    input[type="email"]::placeholder {
+        text-align: right;
+        direction: rtl;
+    }
+
+.left-text-align {
+    text-align: left !important;
+    direction: ltr;
+}
+
+.hidden{
+    display:none!important;
+}
+
+.ltn__breadcrumb-area {
+    margin-bottom: 40px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}

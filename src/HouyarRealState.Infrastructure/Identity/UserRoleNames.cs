@@ -7,5 +7,6 @@
         public const string Customer = "Customer";
         public const string Employee = "Employee";
         public const string User = "User";
+        public const string Agent = "Agent";
     }
 }

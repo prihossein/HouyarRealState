@@ -32,6 +32,11 @@ namespace HouyarRealState.Infrastructure
             services.AddScoped<ICacheManagerService, CacheManagerService>();
             services.AddTransient<ILanguageService, LanguageService>();
             services.AddTransient<IPropertyRepository, PropertyRepository>();
+            services.AddTransient<IPropertyFeatureRepository, PropertyFeatureRepository>();
+            services.AddTransient<IPropertyStatusRepository, PropertyStatusRepository>();
+            services.AddTransient<ITransactionTypeRepository, TransactionTypeRepository>();
+            services.AddTransient<IAccountRepository, AccountRepository>();
+
             services.AddMemoryCache();
             services.AddMediatR(x => x.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
                 .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviours<,>))

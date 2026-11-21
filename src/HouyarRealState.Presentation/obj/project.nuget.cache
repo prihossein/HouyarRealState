@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hTbsN2bCFfk=",
+  "dgSpecHash": "AYDta03d8jw=",
   "success": true,
   "projectFilePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Presentation\\HouyarRealState.Presentation.csproj",
   "expectedPackageFiles": [
@@ -78,15 +78,5 @@
     "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512",
     "C:\\Users\\Hossein\\.nuget\\packages\\system.security.cryptography.xml\\11.0.0\\system.security.cryptography.xml.11.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Presentation\\HouyarRealState.Presentation.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Presentation\\HouyarRealState.Presentation.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

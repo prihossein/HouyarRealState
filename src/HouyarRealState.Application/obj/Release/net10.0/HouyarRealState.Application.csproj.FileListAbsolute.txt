@@ -1,0 +1,5 @@
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Application\obj\Release\net10.0\HouyarRealState.Application.csproj.AssemblyReference.cache
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Application\obj\Release\net10.0\HouyarRealState.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Application\obj\Release\net10.0\HouyarRealState.Application.AssemblyInfoInputs.cache
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Application\obj\Release\net10.0\HouyarRealState.Application.AssemblyInfo.cs
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Application\obj\Release\net10.0\HouyarRealState.Application.csproj.CoreCompileInputs.cache

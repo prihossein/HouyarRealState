@@ -95,7 +95,7 @@
             },
             "Microsoft.AspNetCore.Mvc.ViewFeatures": {
               "target": "Package",
-              "version": "[2.3.13, )"
+              "version": "[2.3.14, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -815,7 +815,7 @@
         },
         "warningProperties": {
           "noWarn": [
-            "NU1902"
+            "NU1900"
           ],
           "warnAsError": [
             "NU1605"

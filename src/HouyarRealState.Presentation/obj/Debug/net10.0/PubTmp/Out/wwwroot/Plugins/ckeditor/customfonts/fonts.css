@@ -1,0 +1,189 @@
+﻿@font-face {
+    font-family: 'Lotus';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Lotus';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus-Bold.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Parastoo;
+    src: url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo.eot');
+    src: url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo.eot?#iefix') format('embedded-opentype'), url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo.woff2') format('woff2'), url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo.woff') format('woff'), url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Parastoo;
+    src: url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo-Bold.eot');
+    src: url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo-Bold.eot?#iefix') format('embedded-opentype'), url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo-Bold.woff2') format('woff2'), url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo-Bold.woff') format('woff'), url('/plugins/ckeditor/customfonts/parastoo/web/Parastoo-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: 'BYekan';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'BYekan';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'BNazanin';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Nazanin/Nazanin.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Nazanin/Nazanin.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Nazanin/Nazanin.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Nazanin/Nazanin.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'BNazanin';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Nazanin/Nazanin-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Nazanin/Nazanin-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Nazanin/Nazanin-Bold.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Nazanin/Nazanin-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Mitra';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Mitra/Mitra.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Mitra/Mitra.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Mitra/Mitra.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Mitra/Mitra.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Mitra';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Mitra/Mitra-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Mitra/Mitra-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Mitra/Mitra-Bold.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Mitra/Mitra-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Shabnam;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Shabnam;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Bold.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Bold.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Shabnam;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Light.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Light.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Light.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Light.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Samim';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Samim';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Sahel;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Sahel;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Bold.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Sahel;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Black.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Black.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Black.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: BVazir;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: BVazir;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Bold.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Bold.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: BVazir;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Light.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Light.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Light.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Light.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: BVazir;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Medium.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Medium.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Medium.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Medium.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: BVazir;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Thin.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Thin.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Thin.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Thin.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: BVazir;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Black.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Black.eot?#iefix') format('embedded-opentype'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Black.woff2') format('woff2'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Black.woff') format('woff'), url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Tanha;
+    src: url('/plugins/ckeditor/customfonts/tanha/Tanha.eot');
+    src: url('/plugins/ckeditor/customfonts/tanha/Tanha.eot?#iefix') format('embedded-opentype'), url('/plugins/ckeditor/customfonts/tanha/Tanha.woff') format('woff'), url('/plugins/ckeditor/customfonts/tanha/Tanha.ttf') format('truetype');
+    font-weight: normal;
+}
+
+.cke_editable {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: Parastoo;
+    /* Fix for missing scrollbars with RTL texts. (#10488) */
+    word-wrap: break-word;
+}
+
+.cke_editable a{
+    color:red;
+    font-weight:bold;
+    text-decoration:none;
+}

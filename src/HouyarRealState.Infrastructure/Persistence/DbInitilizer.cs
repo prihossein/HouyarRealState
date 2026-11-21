@@ -14,6 +14,7 @@ namespace HouyarRealState.Infrastructure.Persistence
             await SeedDatas.SeedPropertyFeaturesAsync(dbContext);
             await SeedDatas.SeedTransactionTypesAsync(dbContext);
             await SeedDatas.SeedPropertyTypesAsync(dbContext);
+            await SeedDatas.SeedPropertyStatusAsync(dbContext);
             if (dbContext.Roles.Any())
             {
                 return;
@@ -32,6 +33,13 @@ namespace HouyarRealState.Infrastructure.Persistence
             {
                 Name = UserRoleNames.Administrator,
                 NormalizedName = UserRoleNames.Administrator.ToUpper(),
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+            };
+
+            var agentRole = new IdentityRole<Guid>
+            {
+                Name = UserRoleNames.Agent,
+                NormalizedName = UserRoleNames.Agent.ToUpper(),
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
             };
 

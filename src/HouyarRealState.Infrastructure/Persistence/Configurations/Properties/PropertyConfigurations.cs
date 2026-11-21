@@ -35,7 +35,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
             // Foreign Keys
             // ==========================================
 
-            builder.Property(p => p.UserId)
+            builder.Property(p => p.AgentId)
                 .IsRequired();
 
             builder.Property(p => p.PropertyTypeId)
@@ -57,9 +57,16 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
                 .IsRequired(false)
                 .HasMaxLength(200);
 
+            builder.Property(p => p.Address).IsRequired().HasColumnType("nvarchar(max)");
+
+
             builder.Property(p => p.Description)
                 .IsRequired(false)
                 .HasColumnType("nvarchar(max)");
+
+            builder.Property(p => p.OwnerMobileNumber)
+    .IsRequired(false)
+    .HasColumnType("nvarchar(max)");
 
             builder.Property(p => p.RenovationCode)
                 .HasMaxLength(50);
@@ -125,9 +132,9 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
                 .OnDelete(DeleteBehavior.NoAction);
 
             // Creator (ApplicationUser)
-            builder.HasOne(p => p.Creator)
+            builder.HasOne(p => p.Agent)
                 .WithMany(u => u.Properties)
-                .HasForeignKey(p => p.UserId)
+                .HasForeignKey(p => p.AgentId)
                 .OnDelete(DeleteBehavior.NoAction);
 
             // Property Type
@@ -152,7 +159,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
             // Indexes
             // ==========================================
 
-            builder.HasIndex(p => p.UserId);
+            builder.HasIndex(p => p.AgentId);
 
             builder.HasIndex(p => p.PropertyTypeId);
 
@@ -180,14 +187,14 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
             // User Properties Index
             builder.HasIndex(p => new
             {
-                p.UserId,
+                p.AgentId,
                 p.IsDelete
             });
 
             // Published Properties Index
             builder.HasIndex(p => new
             {
-                p.PropertyStatus,
+                p.PropertyStatusId,
                 p.IsDelete,
                 p.CreateDate
             });

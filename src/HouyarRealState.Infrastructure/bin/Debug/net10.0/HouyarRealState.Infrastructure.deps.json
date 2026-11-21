@@ -170,25 +170,25 @@
           }
         }
       },
-      "Microsoft.AspNetCore.JsonPatch/2.3.11": {
+      "Microsoft.AspNetCore.JsonPatch/2.3.12": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.4"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
-            "assemblyVersion": "2.3.11.0",
-            "fileVersion": "2.3.11.26141"
+            "assemblyVersion": "2.3.12.0",
+            "fileVersion": "2.3.12.26216"
           }
         }
       },
-      "Microsoft.AspNetCore.Mvc.Formatters.Json/2.3.12": {
+      "Microsoft.AspNetCore.Mvc.Formatters.Json/2.3.13": {
         "dependencies": {
-          "Microsoft.AspNetCore.JsonPatch": "2.3.11"
+          "Microsoft.AspNetCore.JsonPatch": "2.3.12"
         }
       },
-      "Microsoft.AspNetCore.Mvc.ViewFeatures/2.3.13": {
+      "Microsoft.AspNetCore.Mvc.ViewFeatures/2.3.14": {
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.3.12",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.3.13",
           "Newtonsoft.Json": "13.0.4",
           "Newtonsoft.Json.Bson": "1.0.2",
           "System.Security.Cryptography.Xml": "11.0.0"
@@ -1296,7 +1296,7 @@
           "HtmlAgilityPack": "1.12.4",
           "MediatR": "14.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.13",
-          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.3.13",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.3.14",
           "Microsoft.EntityFrameworkCore": "10.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "10.0.13",
           "Microsoft.Extensions.Identity.Core": "10.0.13",
@@ -1429,26 +1429,26 @@
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/10.0.13",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.10.0.13.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.JsonPatch/2.3.11": {
+    "Microsoft.AspNetCore.JsonPatch/2.3.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PTomTVywAW0h8ZAAYqePxWY6q4Zplcq0g3MciyZTbeRR7GLkgkkO2Si5QzxAdb5E0c1EsKiDzYKNJHkWpnjIRg==",
-      "path": "microsoft.aspnetcore.jsonpatch/2.3.11",
-      "hashPath": "microsoft.aspnetcore.jsonpatch.2.3.11.nupkg.sha512"
+      "sha512": "sha512-eced9UrxDgDff+fDomPEfIcpmEEf/AR9C39LD2ftKczfXrsvvzqr1fQoE7FBqZ8raKrg206MQzXclZkO/5mMhg==",
+      "path": "microsoft.aspnetcore.jsonpatch/2.3.12",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.2.3.12.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Mvc.Formatters.Json/2.3.12": {
+    "Microsoft.AspNetCore.Mvc.Formatters.Json/2.3.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PaQ80VEG8kudznsB14JaO351E62gQr/sWhgzfEghmDo48BZF8qDATxmgUqA50DqD6nPk9w+jJQT3BHMjg2xvYw==",
-      "path": "microsoft.aspnetcore.mvc.formatters.json/2.3.12",
-      "hashPath": "microsoft.aspnetcore.mvc.formatters.json.2.3.12.nupkg.sha512"
+      "sha512": "sha512-BuopZQPWxA+VpYfcaJL1JjMM8o77Ej1mIWuLJVIO3rlXMBz1krsi8Fgxv/a/7QTlxV8y8oBhmFCqo0GQ/jkFMg==",
+      "path": "microsoft.aspnetcore.mvc.formatters.json/2.3.13",
+      "hashPath": "microsoft.aspnetcore.mvc.formatters.json.2.3.13.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Mvc.ViewFeatures/2.3.13": {
+    "Microsoft.AspNetCore.Mvc.ViewFeatures/2.3.14": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bEN7pR9iDG792BYixlw0aT9P708/1sUUWlNbw39qiAuq/7zIm+Bk6KM3LWoVlactQg+MSCBUPU8iqLROd0aufA==",
-      "path": "microsoft.aspnetcore.mvc.viewfeatures/2.3.13",
-      "hashPath": "microsoft.aspnetcore.mvc.viewfeatures.2.3.13.nupkg.sha512"
+      "sha512": "sha512-JxhedDsyD8xEk22FAu3OK/FUZetIqE0lRKSt3hlj7qkYVQGXWnLesEmQAoyc1OLgmTMv6fNa21xpWEVkJExRcg==",
+      "path": "microsoft.aspnetcore.mvc.viewfeatures/2.3.14",
+      "hashPath": "microsoft.aspnetcore.mvc.viewfeatures.2.3.14.nupkg.sha512"
     },
     "Microsoft.AspNetCore.WebUtilities/10.0.15": {
       "type": "package",

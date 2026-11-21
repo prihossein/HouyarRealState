@@ -1,10 +1,9 @@
-﻿using System.Security.Claims;
-using HouyarRealState.Application.DTOs;
-using HouyarRealState.Application.Queries;
+﻿using HouyarRealState.Application.DTOs;
 using HouyarRealState.Infrastructure.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HouyarRealState.Presentation.Controllers
 {
@@ -91,6 +90,19 @@ namespace HouyarRealState.Presentation.Controllers
         [Route("/Property/AddProperty"),HttpGet]
         public async Task<IActionResult> AddProperty()
         {
+
+            var agents = await _unitOfWork.AccountRepository.GetAgentsForFilterSelectList();
+            ViewData["Agents"] = new SelectList(agents, "Value", "Text");
+
+            var propertyStatuses = await _unitOfWork.PropertyStatusRepository.GetPropertyStatusesForFilterSelectList();
+            ViewData["PropertyStatuses"] = new SelectList(propertyStatuses, "Value", "Text");
+
+
+            var transactionTypes = await _unitOfWork.TransactionTypeRepository.GetTransactionTypesForFilterSelectList();
+            ViewData["TransactionTypes"] = new SelectList(transactionTypes, "Value", "Text");
+
+            ViewBag.PropertyFeatures = await _unitOfWork.PropertyFeatureRepository.GetPropertyFeaturesAsync();
+
             return View();
         }
     }

@@ -1,10 +1,7 @@
 ﻿using HouyarRealState.Application.DTOs;
-using HouyarRealState.Application.DTOs.Common;
 using HouyarRealState.Application.DTOs.Properties;
 using HouyarRealState.Application.Helpers;
-using HouyarRealState.Application.Queries;
 using HouyarRealState.Application.Services;
-using HouyarRealState.Application.Wrappers;
 using HouyarRealState.Domain.Entities.Properties;
 
 namespace HouyarRealState.Infrastructure.Repositories

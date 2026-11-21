@@ -5,7 +5,7 @@ namespace HouyarRealState.Domain.Entities.Properties
     public class Property:BaseEntity
     {
         // شناسه کاربری که آگهی ملک را ثبت کرده است
-        public Guid UserId { get; set; }
+        public Guid AgentId { get; set; }
 
         public Guid PropertyRequestTypeId { get; set; }
 
@@ -26,6 +26,8 @@ namespace HouyarRealState.Domain.Entities.Properties
         // کد نوسازی ملک در شهرداری
         public string? RenovationCode { get; set; }
 
+        public string Address { get; set; }
+        public string? OwnerMobileNumber { get; set; }
 
 
         public bool IsDraft { get; set; }
@@ -60,7 +62,7 @@ namespace HouyarRealState.Domain.Entities.Properties
 
 
         #region Relations
-        public virtual ApplicationUser Creator { get; set; }
+        public virtual ApplicationUser Agent { get; set; }
         public virtual PropertyType PropertyType { get; set; }
         public virtual TransactionType TransactionType { get; set; }
         public virtual PropertyRequestType PropertyRequestType { get; set; }
