@@ -3666,3 +3666,4 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\d23r7bzhmg-{0}-bf9mkaz1hu-bf9mkaz1hu.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\nv3mfmx0nf-{0}-9xlt65r1mi-9xlt65r1mi.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\69au0r4mop-{0}-jzzhrfwl0e-jzzhrfwl0e.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\nupj5jsek2-{0}-02qtrzr0io-02qtrzr0io.gz

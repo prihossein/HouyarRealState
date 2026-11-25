@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using HouyarRealState.Application.DTOs;
 using HouyarRealState.Application.DTOs.User;
+using HouyarRealState.Application.Helpers;
 using HouyarRealState.Application.Services;
 using HouyarRealState.Application.Wrappers;
 using HouyarRealState.Domain.Entities.User;
@@ -25,6 +26,55 @@ namespace HouyarRealState.Infrastructure.Repositories
     
         }
 
+
+
+        public async Task<IdentityResult> AddUserAsync(AddUserDTO model)
+        {
+            string userName = model.Mobile;
+
+            var code = NameGenerator.GeneratePassword(6, "0123456789ABCDEFHIJKLMNOPQRSTUBWXYZ");
+
+            var existCode = await AnyUserAsync(u => u.Code == code);
+
+            while (existCode)
+            {
+                code = NameGenerator.GeneratePassword(6, "0123456789ABCDEFHIJKLMNOPQRSTUBWXYZ");
+                existCode = await AnyUserAsync(u => u.Code == code);
+            }
+
+            var user = new ApplicationUser
+            {
+                Code = code,
+                Email = model.Email,
+                Mobile = model.Mobile,
+                RegisterDate = DateTime.Now,
+                UserName = userName,
+                OTPCode = "00000",
+                OTPCodeExpireDateTime = DateTime.Now
+            };
+
+            var identityResult = await _userManager.CreateAsync(user, model.ConfirmPassword);
+
+            if (identityResult.Succeeded)
+            {
+                if (model.Role.Count() > 0)
+                {
+                    await _userManager.AddToRolesAsync(user, model.Role);
+                }
+
+            }
+
+            return identityResult;
+
+        }
+
+
+
+
+        public async Task<bool> AnyUserAsync(Expression<Func<ApplicationUser, bool>> predicate)
+        {
+            return await _userManager.Users.AnyAsync(predicate);
+        }
 
         public async Task<Tuple<List<UserManagerDTO>, int>> GetUserManagerAsync(int pageId = 1, string userName = "", string code = "", string mobileNumber = "", string fullName = "", string? role = null, int take = 100)
         {

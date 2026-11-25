@@ -16,6 +16,8 @@ namespace HouyarRealState.Domain.Entities.User
         [Display(Name = "مسدود")]
         public bool IsBan { get; set; }
 
+        public string? BaleChatId { get; set; }
+
         public bool IsDelete { get; set; }
 
         public string? OTPCode { get; set; }

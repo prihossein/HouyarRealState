@@ -392,34 +392,57 @@
                         <div class="col-xl-6 col-lg-6">
                             <div class="form-group">
                                 <label for="Mobile" class="required-label">@Html.Raw("شماره موبایل")</label>
-                                <input type="number" name="Mobile" autocomplete="off" id="Mobile" class="form-control" placeholder="@Html.Raw("اجباری")" />
+                                <input type="number" name="Mobile" id="Mobile" class="form-control" placeholder="@Html.Raw("اجباری")" />
                             </div>
                         </div>
 
                         <div class="col-xl-6 col-lg-6">
                             <div class="form-group">
                                 <label for="UserName" class="required-label">@Html.Raw("نام کاربری")</label>
-                                <input type="text" name="UserName" autocomplete="off" id="UserName" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
+                                <input type="text" name="UserName" id="UserName" class="form-control left-text-align" placeholder="@Html.Raw("اجباری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="FullName" class="required-label">@Html.Raw("نام و نام خانوادگی")</label>
+                                <input type="text" name="FullName" id="FullName" class="form-control" placeholder="@Html.Raw("اجباری")" />
                             </div>
                         </div>
 
                         <div class="col-xl-6 col-lg-6">
                             <div class="form-group">
                                 <label for="Email" class="required-label">@Html.Raw("ایمیل")</label>
-                                <input type="email" name="Email" autocomplete="off" id="Email" class="form-control" placeholder="@Html.Raw("اختیاری")" />
-                            </div>
-                        </div>
-
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="form-group">
-                                <label for="BaleChatId">@Html.Raw("چت آی‌دی بله")</label>
-                                <input type="number" name="BaleChatId" autocomplete="off" id="BaleChatId" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                                <input type="email" name="Email" id="Email" class="form-control" placeholder="@Html.Raw("اجباری")" />
                             </div>
                         </div>
 
                         <div class="col-xl-12 col-lg-12">
                             <div class="form-group">
-                                <label class="form-label">نقش‌ها</label>
+                                <label for="BaleChatId">@Html.Raw("چت آی‌دی بله")</label>
+                                <input type="number" name="BaleChatId" id="BaleChatId" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                            </div>
+                        </div>
+
+ 
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="Password" class="required-label">@Html.Raw("کلمه عبور")</label>
+                                <input type="password" name="Password" id="Password" autocomplete="off" class="form-control left-text-align" placeholder="@Html.Raw("اجباری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="ConfirmPassword" class="required-label">@Html.Raw("تکرار کلمه عبور")</label>
+                                <input type="password" name="ConfirmPassword" id="ConfirmPassword" autocomplete="off" class="form-control left-text-align" placeholder="@Html.Raw("اجباری")" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="form-group">
+                                <label class="form-label required-label">نقش‌ها</label>
                                 <div class="row">
 
                                     <div class="col-6">
@@ -447,22 +470,6 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="form-group">
-                                <label for="Password" class="required-label">@Html.Raw("کلمه عبور")</label>
-                                <input type="password" name="Password" id="Password" autocomplete="off" class="form-control left-text-align" placeholder="@Html.Raw("اجباری")" />
-                            </div>
-                        </div>
-
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="form-group">
-                                <label for="ConfirmPassword" class="required-label">@Html.Raw("تکرار کلمه عبور")</label>
-                                <input type="password" name="ConfirmPassword" id="ConfirmPassword" autocomplete="off" class="form-control left-text-align" placeholder="@Html.Raw("اجباری")" />
-                            </div>
-                        </div>
-
-
-
                     </div>
 
 
@@ -472,8 +479,8 @@
 
                     <button type="button" class="btn btn-primary light" data-dismiss="modal">بستن</button>
 
-                    <button type="submit" class="btn btn-primary">@Html.Raw("افزودن کاربر")</button>
-
+                    <button type="submit" class="btn btn-primary btn-submit">@Html.Raw("افزودن کاربر")</button>
+                    <a href="javscript:void(0)" class="btn btn-primary hidden btn-submit-waiting">@Html.Raw("در حال افزودن کاربر") <span><i class='fa fa-spinner fa-spin'></i></span></a>
 
                 </div>
             </form>

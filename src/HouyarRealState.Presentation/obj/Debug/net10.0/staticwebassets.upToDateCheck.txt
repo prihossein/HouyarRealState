@@ -2069,6 +2069,7 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\plugins\toolbar\lang\nb.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\plugins\pastetext\lang\sv.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\js\userManager.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\plugins\magicline\lang\ku.js
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\icomoon\selection.json
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\wwwroot\Plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js
@@ -6741,6 +6742,7 @@ wwwroot\js\login.js
 wwwroot\js\properties.js
 wwwroot\js\site.js
 wwwroot\js\updateProperty.js
+wwwroot\js\userManager.js
 wwwroot\lib\bootstrap\LICENSE
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map

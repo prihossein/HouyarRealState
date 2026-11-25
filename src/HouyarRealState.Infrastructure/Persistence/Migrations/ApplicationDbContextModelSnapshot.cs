@@ -122,8 +122,6 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("CreateDate");
 
-                    b.HasIndex("IsDelete");
-
                     b.HasIndex("PropertyRequestTypeId");
 
                     b.HasIndex("PropertyTypeId");
@@ -319,6 +317,9 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("BaleChatId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Code")
                         .IsRequired()
