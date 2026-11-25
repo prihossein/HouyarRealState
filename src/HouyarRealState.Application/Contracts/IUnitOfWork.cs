@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HouyarRealState.Application.Contracts
+﻿namespace HouyarRealState.Application.Contracts
 {
     public interface IUnitOfWork : IDisposable
     {
@@ -11,6 +7,9 @@ namespace HouyarRealState.Application.Contracts
         IPropertyFeatureRepository PropertyFeatureRepository { get; }
         IPropertyStatusRepository PropertyStatusRepository { get; }
         ITransactionTypeRepository TransactionTypeRepository { get; }
+        IPropertyRequestTypeRepository PropertyRequestTypeRepository { get; }
+        IPropertyTypeRepository PropertyTypeRepository { get; }
+        IPropertyInFeatureRepository PropertyInFeatureRepository { get; }
         Task ComplateAsync();
     }
 }

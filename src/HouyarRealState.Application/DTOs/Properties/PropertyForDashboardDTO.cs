@@ -11,6 +11,7 @@ namespace HouyarRealState.Application.DTOs.Properties
         public List<PropertyRequestType> PropertyRequestTypes { get; set; } = new List<PropertyRequestType>();
         public List<PropertyType> PropertyTypes { get; set; } = new List<PropertyType>();
         public List<TransactionType> TransactionTypes { get; set; } = new List<TransactionType>();
+        public List<PropertyStatus> PropertyStatuses { get; set; } = new List<PropertyStatus>();
 
         public int CountProperties { get; set; }
     }

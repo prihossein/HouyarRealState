@@ -14,9 +14,9 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
             // Primary Key
             builder.HasKey(pf => pf.Id);
 
-            // Base Properties
-            builder.Property(pf => pf.Id)
-                .ValueGeneratedNever();
+            //// Base Properties
+            //builder.Property(pf => pf.Id)
+            //    .ValueGeneratedNever();
 
             builder.Property(pf => pf.IsDelete)
                 .IsRequired()

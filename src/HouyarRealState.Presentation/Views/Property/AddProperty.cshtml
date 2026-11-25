@@ -9,6 +9,10 @@
     var propertyFeatures = ViewBag.PropertyFeatures as List<PropertyFeature>;
 }
 
+@section _Styles {
+    <link href="~/plugins/openstreenmap/leaflet.css" rel="stylesheet" />
+}
+
 <div class="container-fluid">
 
 
@@ -52,27 +56,8 @@
                                         <label asp-for="Description" class="form-label" for="Description">توضیحات</label>
                                         <textarea asp-for="Description"></textarea>
                                     </div>
-                                    <hr />
-                                    <div class="form-group">
-                                        <label asp-for="Address" class="form-label" for="Address">آدرس</label>
-                                        <input type="text" asp-for="Address" class="form-control" placeholder="@Html.Raw("اجباری")" />
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label asp-for="Latitude" class="form-label" for="Latitude">طول جغرافیایی</label>
-                                                <input type="text" asp-for="Latitude" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
-                                            </div>
-                                        </div>
-
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label asp-for="Longitude" class="form-label" for="Longitude">عرض جغرافیایی جغرافیایی</label>
-                                                <input type="text" asp-for="Longitude" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     @if (propertyFeatures != null && propertyFeatures.Count() > 0)
                                     {
                                         <hr />
@@ -86,19 +71,41 @@
                                                             <div class="col-4">
                                                                 <div class="custom-control custom-checkbox mb-3 checkbox-success">
 
-                                                                    <input type="checkbox" class="custom-control-input" name="PropertyFeature" id="PropertyFeature-@propertyFeature.Id">
+                                                                    <input type="checkbox" class="custom-control-input" name="PropertyFeature" value="@propertyFeature.Id" id="PropertyFeature-@propertyFeature.Id">
                                                                     <label class="custom-control-label" for="PropertyFeature-@propertyFeature.Id" title="@propertyFeature.Title">@propertyFeature.Title</label>
 
                                                                 </div>
                                                             </div>
-               
+
                                                         }
                                                     </div>
-       
+
                                                 </div>
                                             </div>
                                         </div>
                                     }
+                                    <hr />
+                                    <div class="form-group">
+                                        <label asp-for="Address" class="form-label required-label" for="Address">آدرس</label>
+                                        <input type="text" asp-for="Address" class="form-control" placeholder="@Html.Raw("اجباری")" />
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label asp-for="Latitude" class="form-label" for="Latitude">طول جغرافیایی</label>
+                                                <input type="text" asp-for="Latitude" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
+                                                <span><a href="javascript:void(0)" data-toggle="modal" data-target="#modalMap">انتخاب از روی نقشه</a></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label asp-for="Longitude" class="form-label" for="Longitude">عرض جغرافیایی جغرافیایی</label>
+                                                <input type="text" asp-for="Longitude" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-12 col-md-3">
@@ -106,8 +113,34 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label class="form-label required-label" asp-for="TransactionTypeId" for="TransactionTypeId">نوع ملک</label>
+                                                <label class="form-label required-label required-label" asp-for="PropertyRequestTypeId" for="PropertyRequestTypeId">نوع درخواست</label>
+                                                <select asp-for="PropertyRequestTypeId" asp-items="@(ViewData["PropertyRequestTypes"] as SelectList)" class="form-control">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+
+
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label class="form-label required-label required-label" asp-for="TransactionTypeId" for="TransactionTypeId">نوع معامله</label>
                                                 <select asp-for="TransactionTypeId" asp-items="@(ViewData["TransactionTypes"] as SelectList)" class="form-control">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+
+
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label class="form-label required-label required-label" asp-for="PropertyTypeId" for="PropertyTypeId">نوع ملک</label>
+                                                <select asp-for="PropertyTypeId" asp-items="@(ViewData["PropertyTypes"] as SelectList)" class="form-control">
                                                 </select>
                                             </div>
                                         </div>
@@ -117,7 +150,13 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label asp-for="RenovationCode" class="form-label" for="RenovationCode">کد نوسازی</label>
-                                                <input type="text" asp-for="RenovationCode" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
+
+                                                <select asp-for="RenovationCode" id="RenovationCode" class="form-control">
+                                                    <option value="مشخص نیست">مشخص نیست</option>
+                                                    <option value="دارد">دارد</option>
+                                                    <option value="ندارد">ندارد</option>
+
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -127,6 +166,15 @@
                                             <div class="form-group">
                                                 <label asp-for="OwnerMobileNumber" class="form-label" for="OwnerMobileNumber">شماره موبایل مالک</label>
                                                 <input type="text" asp-for="OwnerMobileNumber" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label asp-for="OwnerName" class="form-label" for="OwnerName">نام مالک</label>
+                                                <input type="text" asp-for="OwnerName" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
                                             </div>
                                         </div>
                                     </div>
@@ -204,8 +252,10 @@
                                 </div>
 
                                 <div class="col-12 col-md-12">
+
                                     <a asp-controller="Property" asp-action="Properties" class="btn btn-light">@Html.Raw("انصراف")</a>
-                                    <button type="submit" class="btn btn-primary">@Html.Raw("افزودن ملک") <i class="fa fa-plus"></i></button>
+                                    <a href="javscript:void(0)" class="btn btn-primary hidden submitWating">@Html.Raw("در حال افزودن ملک") <span><i class='fa fa-spinner fa-spin'></i></span></a>
+                                    <button type="submit" class="btn btn-primary submit">@Html.Raw("افزودن ملک") <i class="fa fa-plus"></i></button>
                                 </div>
                             </div>
 
@@ -218,6 +268,32 @@
     </div>
 </div>
 
+
+
+<div class="modal fade" id="modalMap">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Html.Raw("انتخاب موقعیت مکانی ملک از روی نقشه")</h5>
+
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-info">
+                    <p>روی نقشه کلیک کنید تا موقعیت مورد نظر مشخص شود. همچنین می توانید نشانگر را جابجا کنید.</p>
+                </div>
+                <div id="map"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary light" data-dismiss="modal">بستن</button>
+                <a href="javscript:void(0)" class="btn btn-primary btn-set-location">@Html.Raw("انتخاب")</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @section _Scripts {
 
     <script src="/Plugins/ckeditor/ckeditor.js"></script>
@@ -228,6 +304,7 @@
 
         });
     </script>
+    <script src="/plugins/openstreenmap/leaflet.js"></script>
     <partial name="_ValidationScriptsPartial" />
 }
 

@@ -1,4 +1,6 @@
-﻿using HouyarRealState.Domain.Common;
+﻿using HouyarRealState.Application.DTOs.Properties;
+using HouyarRealState.Domain.Common;
+using HouyarRealState.Domain.Entities.Properties;
 
 namespace HouyarRealState.Infrastructure.Repositories
 {
@@ -13,6 +15,9 @@ namespace HouyarRealState.Infrastructure.Repositories
             _context = context;
             _mapper = mapper;
         }
+
+
+
 
         public IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate)
         {

@@ -59,20 +59,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Page/About.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxBYm91dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Page/Contact.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxDb250YWN0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Property/AddProperty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcQWRkUHJvcGVydHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Property/Properties.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcUHJvcGVydGllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Property/UpdateProperty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcVXBkYXRlUHJvcGVydHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/Error.cshtml]
@@ -113,6 +109,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/UpdateProperty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBkYXRlUHJvcGVydHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/UserManager/UserManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZXJcVXNlck1hbmFnZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hossein/source/repos/GIT/HouyarRealState/src/HouyarRealState.Presentation/Views/_ViewImports.cshtml]

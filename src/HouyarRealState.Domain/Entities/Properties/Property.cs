@@ -17,8 +17,13 @@ namespace HouyarRealState.Domain.Entities.Properties
         public Guid PropertyStatusId { get; set; }
 
 
+        public string Code { get; set; }
+
         // عنوان آگهی ملک
         public string? Title { get; set; } = string.Empty;
+
+        // نام مالک
+        public string? OwnerName { get; set; } = string.Empty;
 
         // توضیحات کامل ملک
         public string? Description { get; set; } = string.Empty;

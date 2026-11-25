@@ -1,0 +1,512 @@
+﻿@using HouyarRealState.Application.DTOs.User
+@using Microsoft.AspNetCore.Identity
+@model Tuple<List<UserManagerDTO>,int>
+
+@{
+    ViewData["Title"] = Html.Raw("مدیریت کاربران");
+}
+
+@section _Styles {
+
+    <link href="~/plugins/toastr/toastr.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Plugins/AMIB_jsPersianCal_0.2.1/js-persian-cal.css">
+}
+
+<div class="container-fluid">
+    <div class="row page-titles mx-0">
+        <div class="col-sm-12 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">@Html.Raw("داشبورد")</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">@ViewData["Title"]</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="card">
+                <div class="card-header filter-area">
+                    <h4 class="card-title">@Html.Raw("فیلتر کاربر")</h4>
+                </div>
+                <div class="card-body filter-body hide-area">
+                    <div class="basic-form">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="fullName">@Html.Raw("نام کاربری")</label>
+                                    <input type="text" class="form-control left-text-align" name="fullName" id="fullName" value="@ViewBag.FullName" placeholder="@Html.Raw("نام")">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="code">@Html.Raw("کد کاربر")</label>
+                                    <input type="text" class="form-control left-text-align" name="code" id="code" value="@ViewBag.Code" placeholder="@Html.Raw("کد کاربر")">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="mobileNumber">@Html.Raw("شماره موبایل")</label>
+                                    <input type="number" class="form-control left-text-align" id="mobileNumber" name="mobileNumber" value="@ViewBag.MobileNumber" placeholder="@Html.Raw("شماره موبایل")">
+                                </div>
+
+
+                                <div class="form-group col-md-4">
+                                    <label for="userName">@Html.Raw("نام کاربری")</label>
+                                    <input type="text" class="form-control" id="userName" name="userName" value="@ViewBag.UserName" placeholder="@Html.Raw("نام کاربری")">
+                                </div>
+
+                            </div>
+
+                            <a asp-controller="UserManager" asp-action="UserManager" class="btn btn-default">@Html.Raw("بدون فیلتر")</a>
+                            <button type="submit" class="btn btn-primary">@Html.Raw("فیلتر کاربران")</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header d-sm-flex d-block">
+            <div class="mr-auto mb-sm-0 mb-3">
+                <h4 class="card-title mb-2">@Html.Raw("لیست کاربران")</h4>
+
+            </div>
+
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#modalAdd" class="btn btn-primary mb-2">
+                @Html.Raw("افزودن کاربر") <i class="zmdi zmdi-account-add mr-3"></i>
+            </a>
+
+
+        </div>
+
+
+
+
+        <div class="card-body">
+
+            @if (Model.Item1 != null && Model.Item1.Count() > 0)
+            {
+                <div class="table-responsive">
+                    <div id="ListDatatableView_wrapper" class="dataTables_wrapper no-footer">
+                        <table class="table style-1 dataTable no-footer" id="ListDatatableView" role="grid" aria-describedby="ListDatatableView_info">
+                            <thead>
+                                <tr role="row">
+                                    <th>@Html.Raw("منو")</th>
+                                    <th>@Html.Raw("تاریخ ثبت نام")</th>
+                                    <th>@Html.Raw("کد کاربر")</th>
+                                    <th>@Html.Raw("نام‌کاربری")</th>
+                                    <th>@Html.Raw("شماره موبایل")</th>
+                                    <th>@Html.Raw("نام")</th>
+                                    <th>@Html.Raw("ایمیل")</th>
+                                    <th>@Html.Raw("آخرین ورود")</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var userManager in Model.Item1)
+                                {
+                                    <tr role="row" class="odd">
+
+                                        <td>
+
+                                            @if (userManager.User.UserName.ToLower() != "prihossein")
+                                            {
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-muted light sharp" data-toggle="dropdown">
+                                                        <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
+                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                                <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                                <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                                            </g>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+
+                                                    
+
+                                                        <a class="dropdown-item btn-roles" id="@userManager.User.Id" href="javascript:void(0)" data-toggle="modal" data-target="#modalRoles">@Html.Raw("نقش کاربر")</a>
+                                                        <a class="dropdown-item btn-update" href="javascript:void(0)" id="@userManager.User.Id" data-toggle="modal" data-target="#modalUpdate">@Html.Raw("ویرایش")</a>
+                                                        <a class="dropdown-item text-danger btn-delete" id="@userManager.User.Id" href="javascript:void(0)" data-toggle="modal" data-target="#modalDelete">@Html.Raw("حذف")</a>
+
+													
+                                                    </div>
+                                                </div>
+
+
+
+                                            }
+
+                                        </td>
+
+                                        <td>
+                                            @Html.Raw(userManager.User.RegisterDate.ToShamsiLong())
+                                        </td>
+
+                                        <td>
+                                            @userManager.User.Code
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+
+
+                                                <img src="/zenix/images/avatar/1.png" class="img-fluid mr-2" title="@Html.Raw($"{userManager.User.FullName}")" alt="@Html.Raw($"{userManager.User.FullName}")">
+
+
+                                                <div class="media-body">
+
+                                                    @if (userManager.User.IsBan)
+                                                    {
+                                                        <h6>@userManager.User.UserName <span class="badge badge-danger">@Html.Raw("مسدود")</span></h6>
+                                                    }
+                                                    else
+                                                    {
+                                                        <h6>@userManager.User.UserName</h6>
+                                                    }
+
+
+
+                                                    @if (userManager.Roles != null && userManager.Roles.Count() > 0)
+                                                    {
+                                                        foreach (var role in userManager.Roles)
+                                                        {
+                                                            @switch (role)
+                                                            {
+                                                                case "برنامه نویس":
+                                                                    <span class="badge badge-success">@role</span>
+                                                                    break;
+
+                                                                case "مدیر":
+                                                                    <span class="badge badge-info">@role</span>
+                                                                    break;
+
+                                                                case "مشاور":
+                                                                    <span class="badge badge-warning">@role</span>
+                                                                    break;
+
+                                                                case "کاربر":
+                                                                    <span class="badge badge-default">@role</span>
+                                                                    break;
+
+                                                                default:
+                                                                    break;
+                                                            }
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge badge-warning">@Html.Raw("کاربر")</span>
+                                                    }
+
+
+
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </td>
+
+                                        @if (userManager.User.IsConfirmedMobile)
+                                        {
+                                            <td>
+                                                <h6> @userManager.User.Mobile</h6>
+                                                <span class="badge badge-success">@Html.Raw("تایید شده")</span>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <h6>@userManager.User.Mobile</h6>
+                                                <span class="badge badge-warning">@Html.Raw("تایید نشده")</span>
+                                            </td>
+                                        }
+
+                                        <td>
+                                            @userManager.User.FullName
+                                        </td>
+
+                                        @if (string.IsNullOrWhiteSpace(userManager.User.Email))
+                                        {
+                                            <td>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            if (userManager.User.EmailConfirmed)
+                                            {
+                                                <td>
+                                                    <h6>@userManager.User.Email</h6>
+                                                    <span class="badge badge-success">@Html.Raw("تایید شده")</span>
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    <h6>@userManager.User.Email</h6>
+                                                    <span class="badge badge-warning">@Html.Raw("تایید نشده")</span>
+                                                </td>
+                                            }
+
+                                        }
+
+
+                                        <td>
+                                            @userManager.User.LastLogin.ToShamsiLong()
+                                        </td>
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info">
+                    @Html.Raw("کاربری برای نمایش پیدا نشد")
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="modalUpdate">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Html.Raw("ویرایش کاربر")</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+            </div>
+            <form id="frmUpdate" method="post">
+                <input type="hidden" name="UserId" id="updateUserId" />
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="updateUserName" class="required-label">@Html.Raw("نام کاربری")</label>
+                                <input type="text" disabled autocomplete="off" id="updateUserName" class="form-control left-text-align" placeholder="@Html.Raw("اجباری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="updateMobile" class="required-label">@Html.Raw("شماره موبایل")</label>
+                                <input type="number" name="Mobile" autocomplete="off" id="updateMobile" class="form-control" placeholder="@Html.Raw("اجباری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="updateTelegramChatId">@Html.Raw("چت آی‌دی تلگرام")</label>
+                                <input type="number" name="TelegramChatId" autocomplete="off" id="updateTelegramChatId" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                            </div>
+                        </div>
+
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="updateIsBan">@Html.Raw("وضعیت")</label>
+                                <select name="IsBan" id="updateIsBan" class="form-control form-select selectpicker">
+                                    <option value="false">@Html.Raw("فعال")</option>
+                                    <option value="true">@Html.Raw("مسدود")</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="updateEmail">@Html.Raw("ایمیل")</label>
+                                <input type="email" name="Email" autocomplete="off" id="updateEmail" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="updatePassword">@Html.Raw("کلمه عبور")</label>
+                                <input type="password" name="Password" id="updatePassword" autocomplete="off" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="updateConfirmPassword">@Html.Raw("تکرار کلمه عبور")</label>
+                                <input type="password" name="ConfirmPassword" id="updateConfirmPassword" autocomplete="off" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+
+
+
+
+
+                    <button type="button" class="btn btn-primary light" data-dismiss="modal">بستن</button>
+
+                    <button type="submit" class="btn btn-primary">@Html.Raw("ویرایش کاربر")</button>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="modalAdd">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Html.Raw("افزودن کاربر")</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+            </div>
+            <form id="frmAdd" method="post">
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="Mobile" class="required-label">@Html.Raw("شماره موبایل")</label>
+                                <input type="number" name="Mobile" autocomplete="off" id="Mobile" class="form-control" placeholder="@Html.Raw("اجباری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="UserName" class="required-label">@Html.Raw("نام کاربری")</label>
+                                <input type="text" name="UserName" autocomplete="off" id="UserName" class="form-control left-text-align" placeholder="@Html.Raw("اختیاری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="Email" class="required-label">@Html.Raw("ایمیل")</label>
+                                <input type="email" name="Email" autocomplete="off" id="Email" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="BaleChatId">@Html.Raw("چت آی‌دی بله")</label>
+                                <input type="number" name="BaleChatId" autocomplete="off" id="BaleChatId" class="form-control" placeholder="@Html.Raw("اختیاری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="form-group">
+                                <label class="form-label">نقش‌ها</label>
+                                <div class="row">
+
+                                    <div class="col-6">
+
+                                        <div class="custom-control custom-checkbox mb-3 checkbox-success">
+
+                                            <input type="checkbox" class="custom-control-input" name="Role" value="@UserRoleNames.Administrator" id="@UserRoleNames.Administrator">
+                                            <label class="custom-control-label" for="@UserRoleNames.Administrator" title="مدیر">مدیر</label>
+
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="col-6">
+
+                                        <div class="custom-control custom-checkbox mb-3 checkbox-success">
+
+                                            <input type="checkbox" class="custom-control-input" name="Role" value="@UserRoleNames.Agent" id="@UserRoleNames.Agent">
+                                            <label class="custom-control-label" for="@UserRoleNames.Agent" title="مشاور">مشاور</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="Password" class="required-label">@Html.Raw("کلمه عبور")</label>
+                                <input type="password" name="Password" id="Password" autocomplete="off" class="form-control left-text-align" placeholder="@Html.Raw("اجباری")" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="ConfirmPassword" class="required-label">@Html.Raw("تکرار کلمه عبور")</label>
+                                <input type="password" name="ConfirmPassword" id="ConfirmPassword" autocomplete="off" class="form-control left-text-align" placeholder="@Html.Raw("اجباری")" />
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary light" data-dismiss="modal">بستن</button>
+
+                    <button type="submit" class="btn btn-primary">@Html.Raw("افزودن کاربر")</button>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalDelete">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Html.Raw("حذف کاربر")</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+            </div>
+            <div class="modal-body">
+                <h5><i class="fa fa-warning text-danger"></i> @Html.Raw("آیا از حذف این کاربر اطمینان دارید؟")</h5>
+                <p class="delete-modal-description">@Html.Raw("توجه داشته باشید کاربر حذف شده به همراه اطلاعات شخصی کاربر غیر قابل بازیابی می‌باشد! ترجیحا کاربر را حذف نکنید، آن را مسدود کنید.")</p>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger light" data-dismiss="modal">بستن</button>
+                <form asp-controller="UserManager" asp-action="DeleteUser" method="post">
+                    <input type="hidden" id="userId" name="userId" />
+                    <button type="submit" class="btn btn-danger">@Html.Raw("حذف کاربر")</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section _Scripts {
+    <script src="/plugins/toastr/toastr.min.js"></script>
+    <script src="/Plugins/AMIB_jsPersianCal_0.2.1/js-persian-cal.min.js"></script>
+    <script src="/js/userManager.js"></script>
+}

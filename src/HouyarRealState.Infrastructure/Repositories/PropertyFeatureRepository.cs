@@ -20,6 +20,25 @@ namespace HouyarRealState.Infrastructure.Repositories
             _context = context;
         }
 
+
+        public async Task AddAsync(PropertyFeature model)
+        {
+            await _context.PropertyFeatures.AddAsync(model);
+            _context.SaveChanges();
+        }
+
+        public async Task<List<PropertyFeature>> GetPropertyFeaturesAsync(Guid propertyId)
+        {
+            return await _context.PropertyInFeatures
+                .Where(x => x.PropertyId == propertyId)
+                .Include(x => x.PropertyFeature)
+                .Select(x => new PropertyFeature
+                {
+                    Title = x.PropertyFeature.Title,
+                    Id = x.PropertyFeature.Id
+                }).ToListAsync();
+        }
+
         public async Task<List<PropertyFeature>> GetPropertyFeaturesAsync()
         {
             return await _context.PropertyFeatures.OrderBy(x => x.Title).ToListAsync();

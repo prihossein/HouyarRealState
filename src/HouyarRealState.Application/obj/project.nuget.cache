@@ -101,16 +101,13 @@
   ],
   "logs": [
     {
-      "code": "NU1902",
+      "code": "NU1900",
       "level": "Warning",
-      "message": "Package 'Microsoft.AspNetCore.WebUtilities' 2.3.12 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6527-9fp8-r4x6",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
       "projectPath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\Hossein\\source\\repos\\GIT\\HouyarRealState\\src\\HouyarRealState.Application\\HouyarRealState.Application.csproj",
-      "libraryId": "Microsoft.AspNetCore.WebUtilities",
-      "targetGraphs": [
-        "net10.0"
-      ]
+      "targetGraphs": []
     }
   ]
 }

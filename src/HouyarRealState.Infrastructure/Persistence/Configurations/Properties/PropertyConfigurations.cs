@@ -20,16 +20,14 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
 
             builder.HasKey(p => p.Id);
 
-            builder.Property(p => p.Id)
-                .ValueGeneratedNever();
+            //builder.Property(p => p.Id)
+            //    .ValueGeneratedNever();
 
             // ==========================================
             // Base Properties
             // ==========================================
 
-            builder.Property(p => p.IsDelete)
-                .IsRequired()
-                .HasDefaultValue(false);
+            builder.Property(p => p.IsDelete).IsRequired().HasDefaultValue(false);
 
             // ==========================================
             // Foreign Keys
@@ -38,14 +36,14 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
             builder.Property(p => p.AgentId)
                 .IsRequired();
 
+            builder.Property(p => p.Code).IsRequired();
+
             builder.Property(p => p.PropertyTypeId)
                 .IsRequired();
 
-            builder.Property(p => p.TransactionTypeId)
-                .IsRequired();
+            builder.Property(p => p.TransactionTypeId).IsRequired();
 
-            builder.Property(p => p.PropertyRequestTypeId)
-                .IsRequired();
+            builder.Property(p => p.PropertyRequestTypeId).IsRequired();
 
             builder.Property(p => p.PropertyStatusId).IsRequired();
 
@@ -56,6 +54,8 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
             builder.Property(p => p.Title)
                 .IsRequired(false)
                 .HasMaxLength(200);
+
+            builder.Property(p => p.OwnerName).IsRequired(false).HasMaxLength(200);
 
             builder.Property(p => p.Address).IsRequired().HasColumnType("nvarchar(max)");
 
@@ -144,8 +144,8 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
                 .OnDelete(DeleteBehavior.NoAction);
 
             // Transaction Type
-            builder.HasOne<TransactionType>()
-                .WithMany()
+            builder.HasOne(p => p.TransactionType)
+                .WithMany(pt => pt.Properties)
                 .HasForeignKey(p => p.TransactionTypeId)
                 .OnDelete(DeleteBehavior.NoAction);
 
@@ -169,7 +169,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Configurations.Properties
 
             builder.HasIndex(p => p.CreateDate);
 
-            builder.HasIndex(p => p.IsDelete);
+            builder.HasQueryFilter(p => !p.IsDelete);
 
             // ==========================================
             // Composite Indexes

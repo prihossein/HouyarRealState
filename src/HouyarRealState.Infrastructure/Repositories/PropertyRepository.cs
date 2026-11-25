@@ -18,6 +18,159 @@ namespace HouyarRealState.Infrastructure.Repositories
         }
 
 
+
+
+        public async Task<bool> UpdateAsync(UpdatePropertyDTO dto)
+        {
+            var property = await _context.Properties.FirstOrDefaultAsync(x => x.Id == dto.Id);
+
+            if (property == null) return false;
+
+            // Map DTO to existing tracked entity
+            _mapper.Map(dto, property);
+
+            property.ModifyDate = DateTime.Now;
+
+            // نیازی به Update نیست
+            await _context.SaveChangesAsync();
+
+            // Remove previous features
+            var propertyInFeatures = await _context.PropertyInFeatures
+                .Where(x => x.PropertyId == property.Id)
+                .ToListAsync();
+
+            if (propertyInFeatures.Any())
+            {
+                _context.PropertyInFeatures.RemoveRange(propertyInFeatures);
+            }
+
+            // Add new features
+            if (dto.PropertyFeature != null && dto.PropertyFeature.Any())
+            {
+                foreach (var propertyFeatureId in dto.PropertyFeature)
+                {
+                    await _context.PropertyInFeatures.AddAsync(
+                        new PropertyInFeature
+                        {
+                            PropertyFeatureId = propertyFeatureId,
+                            PropertyId = property.Id
+                        });
+                }
+            }
+
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+
+
+        //public async Task<bool> UpdateAsync(UpdatePropertyDTO dto)
+        //{
+
+        //    var property = await _context.Properties.FirstOrDefaultAsync(x => x.Id == dto.Id);
+
+        //    if (property != null)
+        //    {
+        //        property.ModifyDate = DateTime.Now;
+        //        property = _mapper.Map<Property>(dto);
+
+
+        //        _context.Properties.Update(property);
+        //        await _context.SaveChangesAsync();
+
+
+        //        var propertyInFeatures = await _context.PropertyInFeatures.Where(x => x.PropertyId == property.Id).ToListAsync();
+
+        //        if (propertyInFeatures != null && propertyInFeatures.Count() > 0)
+        //        {
+        //            _context.PropertyInFeatures.RemoveRange(propertyInFeatures);
+        //            await _context.SaveChangesAsync();
+        //        }
+
+
+        //        if (dto.PropertyFeature != null && dto.PropertyFeature.Count() > 0)
+        //        {
+        //            foreach (var propertyFeatureId in dto.PropertyFeature)
+        //            {
+        //                await _context.PropertyInFeatures.AddAsync(new PropertyInFeature
+        //                {
+        //                    PropertyFeatureId = propertyFeatureId,
+        //                    PropertyId = property.Id
+        //                });
+        //            }
+
+        //            await _context.SaveChangesAsync();
+
+
+        //        }
+
+        //        return true;
+
+        //    }
+
+           
+        //    return false;
+
+
+
+
+        //}
+
+
+        public async Task<UpdatePropertyDTO?> GetPropertyForUpdateAsync(Guid id)
+        {
+
+            var property = await _context.Properties.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (property != null)
+            {
+                return _mapper.Map<UpdatePropertyDTO>(property);   
+            }
+            return null;
+        }
+
+        public async Task AddAsync(AddPropertyDTO dto)
+        {
+
+            var newProperty = _mapper.Map<Property>(dto);
+
+            newProperty.CreateDate = DateTime.Now;
+            newProperty.ModifyDate = DateTime.Now;
+
+            newProperty.Code = NameGenerator.GeneratePassword(5,"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+            var existCode = await _context.Properties.AnyAsync(x => x.Code == newProperty.Code);
+
+            while (existCode)
+            {
+                newProperty.Code = NameGenerator.GeneratePassword(5, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+                existCode = await _context.Properties.AnyAsync(x => x.Code == newProperty.Code);
+            }
+
+            await _context.Properties.AddAsync(newProperty);
+            await _context.SaveChangesAsync();
+
+
+            if (dto.PropertyFeature != null && dto.PropertyFeature.Count() > 0) 
+            {
+                foreach (var propertyFeatureId in dto.PropertyFeature)
+                {
+                    await _context.PropertyInFeatures.AddAsync(new PropertyInFeature
+                    {
+                        PropertyFeatureId = propertyFeatureId,
+                        PropertyId = newProperty.Id
+                    });
+                }
+
+                await _context.SaveChangesAsync();
+
+
+            }
+
+        }
+
+
+
         public async Task<int> CountPropertiesAsync(Expression<Func<Property, bool>> predicate)
         {
             return await _context.Properties.CountAsync(predicate);
@@ -25,16 +178,21 @@ namespace HouyarRealState.Infrastructure.Repositories
 
 
 
-        public async Task<PropertyForDashboardDTO> GetPropertiesForDashboard(int pageId = 1, Guid? filterPropertyTypeId = null, Guid? filterPropertyRequestId = null, Guid? filterTransactionTypeId = null, string? filterTilte = null, string? startCreateDate = null, string? endCreateDate = null)
+        public async Task<PropertyForDashboardDTO> GetPropertiesForDashboard(int pageId = 1, Guid? filterPropertyStatusId = null, Guid? filterPropertyTypeId = null, Guid? filterPropertyRequestId = null, Guid? filterTransactionTypeId = null, string? filterTilte = null, string? filterAddress = null, string? startCreateDate = null, string? endCreateDate = null)
         {
             var model = new PropertyForDashboardDTO();
 
-            var properties =  _context.Properties.Include(x => x.PropertyType).Include(x => x.PropertyRequestType).Include(x => x.TransactionType).OrderByDescending(x => x.CreateDate);
+            var properties =  _context.Properties.Include(x => x.PropertyType).Include(x => x.PropertyRequestType).Include(x => x.TransactionType).Include(x => x.PropertyStatus).OrderByDescending(x => x.CreateDate);
 
             #region Filters
             if (!string.IsNullOrWhiteSpace(filterTilte))
             {
                 properties = properties.Where(x => x.Title.Contains(filterTilte)).OrderByDescending(x => x.CreateDate);
+            }
+
+            if (!string.IsNullOrWhiteSpace(filterAddress))
+            {
+                properties = properties.Where(x => x.Address.Contains(filterAddress)).OrderByDescending(x => x.CreateDate);
             }
 
             if (filterPropertyTypeId != null)
@@ -51,6 +209,11 @@ namespace HouyarRealState.Infrastructure.Repositories
             if (filterTransactionTypeId != null)
             {
                 properties = properties.Where(x => x.TransactionTypeId == filterTransactionTypeId.Value).OrderByDescending(x => x.CreateDate);
+            }
+
+            if (filterPropertyStatusId != null)
+            {
+                properties = properties.Where(x => x.PropertyStatusId == filterPropertyStatusId.Value).OrderByDescending(x => x.CreateDate);
             }
 
             if (startCreateDate != null)
@@ -71,6 +234,7 @@ namespace HouyarRealState.Infrastructure.Repositories
             model.PropertyRequestTypes = await _context.PropertyRequestTypes.ToListAsync();
             model.PropertyTypes = await _context.PropertyTypes.ToListAsync();
             model.TransactionTypes = await _context.TransactionTypes.ToListAsync();
+            model.PropertyStatuses = await _context.PropertyStatuses.ToListAsync();
 
             return model;
         }
@@ -94,7 +258,7 @@ namespace HouyarRealState.Infrastructure.Repositories
             entity.IsDelete = true;
 
             _context.Properties.Update(entity);
-            
+            await _context.SaveChangesAsync();
 
         }
 

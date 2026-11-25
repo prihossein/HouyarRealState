@@ -800,12 +800,8 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\lqkk9ax999-{0}-kjuauhbxvs-kjuauhbxvs.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\p7f159gbbj-{0}-voty88h0to-voty88h0to.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\9xja8nekfi-{0}-1q8vio6urr-1q8vio6urr.gz
-C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\69au0r4mop-{0}-g8oyw28i6b-g8oyw28i6b.gz
-C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\nv3mfmx0nf-{0}-cp1dp47u3k-cp1dp47u3k.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\v4rvl93qgh-{0}-9thpfwaww5-9thpfwaww5.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\l1e78d4iy7-{0}-au471czint-au471czint.gz
-C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\d23r7bzhmg-{0}-mpumyelxb4-mpumyelxb4.gz
-C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\ydwnsqrsls-{0}-qoppt6vll7-qoppt6vll7.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\leuzdoad2f-{0}-dianigzjub-dianigzjub.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\7sxzwedavj-{0}-ig9mkj8aea-ig9mkj8aea.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\oznu0v7puj-{0}-e58qo5cs8f-e58qo5cs8f.gz
@@ -3602,7 +3598,6 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\s4267e08a1-{0}-c2jlpeoesf-c2jlpeoesf.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\4gtab5l06c-{0}-bqjiyaj88i-bqjiyaj88i.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\ndh71pnkr9-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
-C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\v61vzl568u-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\qtjqb5eakd-{0}-ey8jacgyna-ey8jacgyna.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\rw19xnyghh-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\t83m3qdczg-{0}-oxfotupqhk-oxfotupqhk.gz
@@ -3650,7 +3645,6 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\kpj1tarmto-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\4havckxx3q-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\0zpgu1anp3-{0}-uopin4x8x9-uopin4x8x9.gz
-C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\rvbijjpt4w-{0}-boxathvpod-boxathvpod.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\xha4zbptdu-{0}-do9smr7oy4-do9smr7oy4.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\tppjdxs9sz-{0}-do9smr7oy4-do9smr7oy4.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\staticwebassets.build.json
@@ -3661,4 +3655,14 @@ C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentati
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\HouyarRe.1069700C.Up2Date
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\HouyarRealState.Presentation.genruntimeconfig.cache
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\ref\HouyarRealState.Presentation.dll
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\xubuilfn88-{0}-7888sfn8yc-7888sfn8yc.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\9gden2hgj5-{0}-v78t325kt9-v78t325kt9.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\rvbijjpt4w-{0}-p64piyzefb-p64piyzefb.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\ddync9iks0-{0}-hl5w712b2f-hl5w712b2f.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\v61vzl568u-{0}-mhrpw0df4i-mhrpw0df4i.gz
 C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\0wlrwl0fbg-{0}-m39q1opj45-m39q1opj45.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\ydwnsqrsls-{0}-flpd8jcwbm-flpd8jcwbm.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\d23r7bzhmg-{0}-bf9mkaz1hu-bf9mkaz1hu.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\nv3mfmx0nf-{0}-9xlt65r1mi-9xlt65r1mi.gz
+C:\Users\Hossein\source\repos\GIT\HouyarRealState\src\HouyarRealState.Presentation\obj\Debug\net10.0\compressed\69au0r4mop-{0}-jzzhrfwl0e-jzzhrfwl0e.gz

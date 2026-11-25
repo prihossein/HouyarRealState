@@ -1,4 +1,5 @@
-﻿using HouyarRealState.Domain.Entities.User;
+﻿using HouyarRealState.Application.Wrappers;
+using HouyarRealState.Domain.Entities.User;
 using HouyarRealState.Infrastructure.Identity;
 using HouyarRealState.Infrastructure.Persistence.SeedData;
 using Microsoft.AspNetCore.Identity;

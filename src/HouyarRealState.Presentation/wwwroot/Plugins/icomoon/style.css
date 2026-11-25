@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?p1x9hm');
-  src:  url('fonts/icomoon.eot?p1x9hm#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?p1x9hm') format('truetype'),
-    url('fonts/icomoon.woff?p1x9hm') format('woff'),
-    url('fonts/icomoon.svg?p1x9hm#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?gzlhls');
+  src:  url('fonts/icomoon.eot?gzlhls#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?gzlhls') format('truetype'),
+    url('fonts/icomoon.woff?gzlhls') format('woff'),
+    url('fonts/icomoon.svg?gzlhls#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-houses:before {
+  content: "\e9d4";
+}
 .icon-bank-bitcoin:before {
   content: "\e9d3";
 }

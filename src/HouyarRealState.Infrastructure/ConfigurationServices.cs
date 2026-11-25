@@ -29,12 +29,17 @@ namespace HouyarRealState.Infrastructure
             services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")); });
             services.AddHttpClient();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+
             services.AddScoped<ICacheManagerService, CacheManagerService>();
             services.AddTransient<ILanguageService, LanguageService>();
+
             services.AddTransient<IPropertyRepository, PropertyRepository>();
             services.AddTransient<IPropertyFeatureRepository, PropertyFeatureRepository>();
             services.AddTransient<IPropertyStatusRepository, PropertyStatusRepository>();
             services.AddTransient<ITransactionTypeRepository, TransactionTypeRepository>();
+            services.AddTransient<IPropertyTypeRepository, PropertyTypeRepository>();
+            services.AddTransient<IPropertyRequestTypeRepository, PropertyRequestTypeRepository>();
+            services.AddTransient<IPropertyInFeatureRepository, PropertyInFeatureRepository>();
             services.AddTransient<IAccountRepository, AccountRepository>();
 
             services.AddMemoryCache();

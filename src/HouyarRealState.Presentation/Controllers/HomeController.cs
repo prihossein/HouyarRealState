@@ -16,7 +16,8 @@ namespace HouyarRealState.Presentation.Controllers
         }
 
 
-        [Authorize(Roles = $"{UserRoleNames.Owner}, {UserRoleNames.Administrator}")]
+        [Authorize(Roles = $"{UserRoleNames.Owner}, {UserRoleNames.Administrator}, {UserRoleNames.Agent}"),]
+
         public async Task<IActionResult> Index()
         {
 

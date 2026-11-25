@@ -17,6 +17,9 @@ namespace HouyarRealState.Infrastructure.Repositories
         public IPropertyFeatureRepository PropertyFeatureRepository { get; private set; }
         public IPropertyStatusRepository PropertyStatusRepository { get; private set; }
         public ITransactionTypeRepository TransactionTypeRepository { get; private set; }
+        public IPropertyRequestTypeRepository PropertyRequestTypeRepository { get; private set; }
+        public IPropertyTypeRepository PropertyTypeRepository { get; private set; }
+        public IPropertyInFeatureRepository PropertyInFeatureRepository { get; private set; }
 
      
         #endregion
@@ -33,6 +36,10 @@ namespace HouyarRealState.Infrastructure.Repositories
             PropertyFeatureRepository = new PropertyFeatureRepository(_context, _mapper, _cacheManagerService);
             PropertyStatusRepository = new PropertyStatusRepository(_context, _mapper, _cacheManagerService);
             TransactionTypeRepository = new TransactionTypeRepository(_context, _mapper, _cacheManagerService);
+            PropertyRequestTypeRepository = new PropertyRequestTypeRepository(_context, _mapper, _cacheManagerService);
+            PropertyTypeRepository = new PropertyTypeRepository(_context, _mapper, _cacheManagerService);
+            PropertyInFeatureRepository = new PropertyInFeatureRepository(_context, _mapper, _cacheManagerService);
+         
         }
 
         public async Task ComplateAsync()

@@ -1,5 +1,6 @@
 ﻿@using HouyarRealState.Application.DTOs
 @using HouyarRealState.Application.DTOs.Properties
+@inject HouyarRealState.Application.Contracts.IPropertyFeatureRepository _propertyFeatureRepository
 @model PropertyForDashboardDTO
 
 
@@ -35,25 +36,33 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="filterTitle">@Html.Raw("عنوان ملک")</label>
-                                    <input type="text" class="form-control" name="filterTitle" id="filterTitle" value="@ViewBag.filterTitle" placeholder="@Html.Raw("نام ملک")">
+                                    <input type="text" class="form-control" name="filterTitle" id="filterTitle" value="@ViewBag.filterTitle" placeholder="@Html.Raw("عنوان ملک")">
                                 </div>
                             </div>
 
                             <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="filterAddress">@Html.Raw("آدرس")</label>
+                                    <input type="text" class="form-control" name="filterAddress" id="filterAddress" value="@ViewBag.filterAddress" placeholder="@Html.Raw("آدرس")">
+                                </div>
+                            </div>
 
 
-                                <div class="form-group col-md-4">
+                            <div class="form-row">
+
+
+                                <div class="form-group col-md-3">
                                     <label for="filterPropertyTypeId">@Html.Raw("نوع ملک")</label>
                                     <select id="filterPropertyTypeId" name="filterPropertyTypeId" class="form-control">
                                         <option>همه</option>
                                         @foreach (var propertyType in Model.PropertyTypes)
                                         {
-                                            <option  value="@propertyType.Id">@propertyType.Title</option>
+                                            <option value="@propertyType.Id">@propertyType.Title</option>
                                         }
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="filterTransactionTypeId">@Html.Raw("نوع معامله")</label>
                                     <select id="filterTransactionTypeId" name="filterTransactionTypeId" class="form-control">
                                         <option>همه</option>
@@ -64,7 +73,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="filterPropertyRequestId">@Html.Raw("نوع درخواست")</label>
                                     <select id="filterPropertyRequestId" name="filterPropertyRequestId" class="form-control">
                                         <option>همه</option>
@@ -74,7 +83,23 @@
                                         }
                                     </select>
                                 </div>
+
+                                
+                                <div class="form-group col-md-3">
+                                    <label for="filterPropertyStatusId">@Html.Raw("وضعیت")</label>
+                                    <select id="filterPropertyStatusId" name="filterPropertyStatusId" class="form-control">
+                                        <option>همه</option>
+                                        @foreach (var PropertyStatus in Model.PropertyStatuses)
+                                        {
+                                            <option value="@PropertyStatus.Id">@PropertyStatus.Title</option>
+                                        }
+                                    </select>
+                                </div>
                             </div>
+
+
+
+
                             <a asp-controller="Property" asp-action="Properties" class="btn btn-default">@Html.Raw("بدون فیلتر")</a>
                             <button type="submit" class="btn btn-primary">@Html.Raw("فیلتر کردن")</button>
                         </form>
@@ -92,11 +117,6 @@
                 <span><b>@Html.Raw("تعداد کل ملک‌ها: ")</b>@Model.CountProperties</span>
             </div>
 
-            <a asp-controller="Property" asp-action="ExportPropertiesToExcel" class="btn btn-outline-success mb-2 mr-2">
-                @Html.Raw("خروجی اکسل")
-                <svg width="24px" height="24px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>file_type_excel2</title><path d="M28.781,4.405H18.651V2.018L2,4.588V27.115l16.651,2.868V26.445H28.781A1.162,1.162,0,0,0,30,25.349V5.5A1.162,1.162,0,0,0,28.781,4.405Zm.16,21.126H18.617L18.6,23.642h2.487v-2.2H18.581l-.012-1.3h2.518v-2.2H18.55l-.012-1.3h2.549v-2.2H18.53v-1.3h2.557v-2.2H18.53v-1.3h2.557v-2.2H18.53v-2H28.941Z" style="fill:#20744a;fill-rule:evenodd" /><rect x="22.487" y="7.439" width="4.323" height="2.2" style="fill:#20744a" /><rect x="22.487" y="10.94" width="4.323" height="2.2" style="fill:#20744a" /><rect x="22.487" y="14.441" width="4.323" height="2.2" style="fill:#20744a" /><rect x="22.487" y="17.942" width="4.323" height="2.2" style="fill:#20744a" /><rect x="22.487" y="21.443" width="4.323" height="2.2" style="fill:#20744a" /><polygon points="6.347 10.673 8.493 10.55 9.842 14.259 11.436 10.397 13.582 10.274 10.976 15.54 13.582 20.819 11.313 20.666 9.781 16.642 8.248 20.513 6.163 20.329 8.585 15.666 6.347 10.673" style="fill:#ffffff;fill-rule:evenodd" /></svg>
-            </a>
-
             <a asp-controller="Property" asp-action="AddProperty" class="btn btn-info">@Html.Raw("افزودن ملک +")</a>
         </div>
         <div class="card-body">
@@ -107,19 +127,24 @@
                         <thead>
                             <tr>
                                 <th>@Html.Raw("منو")</th>
-                                <th>@Html.Raw("تاریخ انتشار")</th>
+                                <th>@Html.Raw("تاریخ")</th>
                                 <th>@Html.Raw("عنوان")</th>
-                                <th>@Html.Raw("سوالات متداول")</th>
-                                <th>@Html.Raw("بازدید")</th>
+                                <th>@Html.Raw("نوع درخواست")</th>
+                                <th>@Html.Raw("نوع معامله")</th>
+                                <th>@Html.Raw("نوع ملک")</th>
+                                <th>@Html.Raw("نام مالک")</th>
+                                <th>@Html.Raw("شماره تماس مالک")</th>
+                                <th>@Html.Raw("آدرس")</th>
+                                <th>@Html.Raw("مساحت کل")</th>
+                                <th>@Html.Raw("مساحت زیربنا")</th>
+                                <th>@Html.Raw("حداقل قیمت کل")</th>
+                                <th>@Html.Raw("حداکثر قیمت کل")</th>
                                 <th>@Html.Raw("وضعیت")</th>
-                                <th>@Html.Raw("تعداد کلمات")</th>
-                                <th>@Html.Raw("لینک داخلی")</th>
-                                <th>@Html.Raw("لینک خارجی")</th>
                             </tr>
                         </thead>
                         <tbody id="customers">
 
-                            @foreach (var item in Model.Properties.Item1)
+                            @foreach (var property in Model.Properties.Item1)
                             {
                                 <tr class="btn-reveal-trigger">
                                     <td class="py-2">
@@ -127,14 +152,77 @@
                                             <button class="btn btn-primary tp-btn-light sharp" type="button" data-toggle="dropdown"><span class="fs--1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg></span></button>
                                             <div class="dropdown-menu dropdown-menu-right border py-0">
                                                 <div class="py-2">
-                                                    <a class="dropdown-item" href="javascript:void(0);" asp-route-propertyId="@item.Id" data-toggle="modal" data-target="#update-modal">@Html.Raw("ویرایش") </a>
-                                                    <a class="dropdown-item text-danger btn-delete" href="javascript:void(0);" id="@item.Id" data-toggle="modal" data-target="#delete-modal">حذف</a>
+                                                    <a class="dropdown-item" asp-controller="Property" asp-action="UpdateProperty" asp-route-id="@property.Id">@Html.Raw("ویرایش") </a>
+                                                    <a class="dropdown-item text-danger btn-delete" href="javascript:void(0);" id="@property.Id" data-toggle="modal" data-target="#delete-modal">حذف</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
 
+                                    <td>
+                                        @property.CreateDate.ToShamsiLong()
+                                    </td>
 
+                                    <td>
+                                        @property.Title
+                                    </td>
+
+                                    <td>
+                                        @property.PropertyRequestType.Title
+                                    </td>
+
+                                    <td>
+                                        @property.TransactionType.Title
+                                    </td>
+
+                                    <td>
+                                        @property.PropertyType.Title
+                                    </td>
+
+                                    <td>
+                                        @property.OwnerName
+                                    </td>
+
+                                    <td>
+                                        @property.OwnerMobileNumber
+                                    </td>
+
+                                    <td>
+                                        @property.Address
+                                    </td>
+
+                            
+                                    <td>
+                                        @property.Area
+                                    </td>
+
+                                    <td>
+                                        @property.BuiltArea
+                                    </td>
+
+                                    @{
+                                        var propertyFeatures = await _propertyFeatureRepository.GetPropertyFeaturesAsync(property.Id);
+                                    }
+
+                                    <td>
+                                        @(property.MinTotalPrice != null ? property.MinTotalPrice.Value.ToString("#,0") : "")
+                                    </td>
+
+                                    <td>
+                                        @(property.MaxTotalPrice != null ? property.MaxTotalPrice.Value.ToString("#,0") : "")
+                                    </td>
+
+                                    <td>
+                                        @if (property.PropertyStatus.Title == "در حال اجرا")
+                                        {
+                                            <span class="badge badge-success">@property.PropertyStatus.Title</span>
+                                        }
+                                        else if (property.PropertyStatus.Title == "پایان یافته")
+                                        {
+                                            <span class="badge badge-danger">@property.PropertyStatus.Title</span>
+                                        }
+
+                                    </td>
                                 </tr>
                             }
                         </tbody>
@@ -166,14 +254,26 @@
             </div>
             <div class="modal-body">
                 <h5><i class="fa fa-warning text-danger"></i> @Html.Raw("آیا از حذف این ملک اطمینان دارید؟")</h5>
-                <p>@Html.Raw("توجه داشته باشید ملک حذف شده، غیر قابل بازیابی می باشد!")</p>
+                <div class="alert alert-danger">
+                    <p>@Html.Raw("توجه داشته باشید ملک حذف شده، غیر قابل بازیابی می باشد!")</p>
+                </div>
+
             </div>
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-danger light" data-dismiss="modal">بستن</button>
                 <form id="frmDelete" method="post">
                     <input type="hidden" id="propertyId" name="propertyId" />
-                    <button type="submit" class="btn btn-danger">@Html.Raw("حذف ملک")</button>
+
+                    <a href="javscript:void(0)" class="btn btn-primary btn-delete-submit-waiting hidden">
+                        <span>
+                            <i class='fa fa-spinner fa-spin'></i>
+                        </span>
+                        @Html.Raw("لطفا صبور باشید")
+                    </a>
+
+                    <button type="submit" class="btn btn-primary btn-delete-submit">@Html.Raw("حذف ملک") <i class="fa fa-trash"></i></button>
+
                 </form>
 
             </div>

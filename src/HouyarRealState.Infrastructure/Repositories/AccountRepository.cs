@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Data;
+using HouyarRealState.Application.DTOs;
+using HouyarRealState.Application.DTOs.User;
 using HouyarRealState.Application.Services;
+using HouyarRealState.Application.Wrappers;
 using HouyarRealState.Domain.Entities.User;
-using HouyarRealState.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -15,13 +15,107 @@ namespace HouyarRealState.Infrastructure.Repositories
         private readonly IMapper _mapper;
         private readonly ICacheManagerService _cacheManagerService;
         public readonly UserManager<ApplicationUser> _userManager;
+
         public AccountRepository(ApplicationDbContext context, IMapper mapper, ICacheManagerService cacheManagerService, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _mapper = mapper;
             _cacheManagerService = cacheManagerService;
             _userManager = userManager;
+    
         }
+
+
+        public async Task<Tuple<List<UserManagerDTO>, int>> GetUserManagerAsync(int pageId = 1, string userName = "", string code = "", string mobileNumber = "", string fullName = "", string? role = null, int take = 100)
+        {
+            var users = _userManager.Users.OrderByDescending(x => x.RegisterDate);
+
+            List<UserManagerDTO> userManagerDTO = new List<UserManagerDTO>();
+
+            #region Filter Users
+            if (!string.IsNullOrWhiteSpace(code))
+            {
+                users = users.Where(x => x.Code.ToLower() == code.ToLower())
+                      .OrderByDescending(x => x.RegisterDate);
+            }
+
+
+            if (!string.IsNullOrWhiteSpace(userName))
+            {
+                users = users.Where(x => x.UserName.ToLower().Contains(userName.Trim().ToLower()))
+                      .OrderByDescending(x => x.RegisterDate);
+            }
+
+            if (!string.IsNullOrWhiteSpace(mobileNumber))
+            {
+                users = users.Where(x => x.Mobile == mobileNumber.Trim())
+                      .OrderByDescending(x => x.RegisterDate);
+            }
+
+            if (!string.IsNullOrWhiteSpace(fullName))
+            {
+                users = users.Where(x => x.FullName.ToLower().Contains(fullName.Trim().ToLower()))
+                      .OrderByDescending(x => x.RegisterDate);
+            }
+
+
+
+            if (users != null && await users.CountAsync() > 0)
+            {
+                foreach (var user in users)
+                {
+
+                    List<string> enumRoles = new List<string>();
+                    var roles = await _userManager.GetRolesAsync(user);
+
+                    if (roles != null && roles.Count() > 0)
+                    {
+                        foreach (var userRole in roles)
+                        {
+                            switch (userRole)
+                            {
+                                case UserRoleNames.Owner:
+                                    enumRoles.Add("برنامه نویس");
+                                    break;
+
+                                case UserRoleNames.Administrator:
+                                    enumRoles.Add("مدیر");
+                                    break;
+
+                                case UserRoleNames.Agent:
+                                    enumRoles.Add("مشاور");
+                                    break;
+
+                                case UserRoleNames.User:
+                                    enumRoles.Add("کاربر");
+                                    break;
+
+                                default:
+                                    enumRoles.Add("تعریف نشده");
+                                    break;
+                            }
+                        }
+                    }
+
+                    userManagerDTO.Add(new UserManagerDTO
+                    {
+                        User = user,
+                        Roles = enumRoles
+                    });
+                }
+            }
+
+
+
+
+            #endregion
+
+            return PageList<UserManagerDTO>.CreatePagedList(userManagerDTO, pageId, take);
+
+        }
+
+
+
 
 
         public async Task<List<SelectListItem>> GetAgentsForFilterSelectList()

@@ -38,10 +38,18 @@
 
             <li>
                 <a asp-controller="Property" asp-action="Properties" class="ai-icon" aria-expanded="false">
-                    <i class="fa fa-users"></i>
+                    <i class="icon-houses"></i>
                     <span class="nav-text">@Html.Raw("ملک‌ها")</span>
                 </a>
             </li>
+
+            <li>
+                <a asp-controller="UserManager" asp-action="UserManager" class="ai-icon" aria-expanded="false">
+                    <i class="fa fa-users"></i>
+                    <span class="nav-text">@Html.Raw("کاربران")</span>
+                </a>
+            </li>
+
 
         </ul>
     </div>

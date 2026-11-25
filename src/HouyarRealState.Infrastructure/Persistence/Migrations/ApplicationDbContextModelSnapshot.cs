@@ -26,6 +26,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.Property", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Address")
@@ -42,6 +43,10 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                     b.Property<decimal?>("BuiltArea")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
@@ -87,6 +92,10 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                     b.Property<string>("OwnerMobileNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("OwnerName")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
                     b.Property<Guid>("PropertyRequestTypeId")
                         .HasColumnType("uniqueidentifier");
 
@@ -107,9 +116,6 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("TransactionTypeId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TransactionTypeId1")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AgentId");
@@ -124,8 +130,6 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("TransactionTypeId");
 
-                    b.HasIndex("TransactionTypeId1");
-
                     b.HasIndex("AgentId", "IsDelete");
 
                     b.HasIndex("PropertyStatusId", "IsDelete", "CreateDate");
@@ -138,6 +142,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.PropertyFeature", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDelete")
@@ -162,6 +167,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.PropertyInFeature", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDelete")
@@ -192,6 +198,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.PropertyRequestType", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
@@ -218,6 +225,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.PropertyStatus", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDelete")
@@ -244,6 +252,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.PropertyType", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreateDate")
@@ -278,6 +287,7 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.TransactionType", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDelete")
@@ -573,16 +583,10 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("HouyarRealState.Domain.Entities.Properties.TransactionType", null)
-                        .WithMany()
+                    b.HasOne("HouyarRealState.Domain.Entities.Properties.TransactionType", "TransactionType")
+                        .WithMany("Properties")
                         .HasForeignKey("TransactionTypeId")
                         .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("HouyarRealState.Domain.Entities.Properties.TransactionType", "TransactionType")
-                        .WithMany()
-                        .HasForeignKey("TransactionTypeId1")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Agent");
@@ -687,6 +691,11 @@ namespace HouyarRealState.Infrastructure.Persistence.Migrations
                 });
 
             modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.PropertyType", b =>
+                {
+                    b.Navigation("Properties");
+                });
+
+            modelBuilder.Entity("HouyarRealState.Domain.Entities.Properties.TransactionType", b =>
                 {
                     b.Navigation("Properties");
                 });

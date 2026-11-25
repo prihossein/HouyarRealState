@@ -224,8 +224,7 @@ namespace HouyarRealState.Infrastructure.Persistence.SeedData
             }
         }
 
-        public static async Task SeedTransactionTypesAsync(
-            ApplicationDbContext dbContext)
+        public static async Task SeedTransactionTypesAsync(ApplicationDbContext dbContext)
         {
             var transactionTypes = new List<TransactionType>
     {
@@ -292,8 +291,7 @@ namespace HouyarRealState.Infrastructure.Persistence.SeedData
 
 
 
-        public static async Task SeedPropertyTypesAsync(
-            ApplicationDbContext dbContext)
+        public static async Task SeedPropertyTypesAsync(ApplicationDbContext dbContext)
         {
             var propertyTypes = new List<PropertyType>
             {

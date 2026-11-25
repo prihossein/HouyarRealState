@@ -6,10 +6,12 @@ namespace HouyarRealState.Application.Contracts
 {
     public interface IPropertyRepository : IGenericRepository<Property>
     {
-        Task<PropertyForDashboardDTO> GetPropertiesForDashboard(int pageId = 1, Guid? filterPropertyTypeId = null, Guid? filterPropertyRequestId = null, Guid? filterTransactionTypeId = null, string? filterTilte = null, string? startCreateDate = null, string? endCreateDate = null);
+        Task<bool> UpdateAsync(UpdatePropertyDTO dto);
+        Task AddAsync(AddPropertyDTO dto);
+        Task<PropertyForDashboardDTO> GetPropertiesForDashboard(int pageId = 1,Guid? filterPropertyStatusId = null, Guid? filterPropertyTypeId = null, Guid? filterPropertyRequestId = null, Guid? filterTransactionTypeId = null, string? filterTilte = null, string? filterAddress = null, string? startCreateDate = null, string? endCreateDate = null);
         Task<int> CountPropertiesAsync(Expression<Func<Property, bool>> predicate);
         Task CreateAsync(PropertyDTO dto);
-
+        Task<UpdatePropertyDTO?> GetPropertyForUpdateAsync(Guid id);
         Task DeleteAsync(Guid id);
 
         Task<PropertyDTO?> FirstOrDefaultAsync(Expression<Func<Property, bool>> predicate);

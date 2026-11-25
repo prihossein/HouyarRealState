@@ -12,13 +12,17 @@ namespace HouyarRealState.Application.Mappings
         public AutoMapperConfiguration()
         {
 
-            CreateMap<PropertyDTO, Property>()
-                .ForMember(x => x.CreateDate, s => s.MapFrom(d => d.CreateDate.ToMiladi()))
-                .ForMember(x => x.ModifyDate, s => s.MapFrom(d => d.ModifyDate.ToMiladi()));
+            CreateMap<Property, PropertyDTO>().ReverseMap();
+            CreateMap<Property, AddPropertyDTO>().ReverseMap();
+            CreateMap<Property, UpdatePropertyDTO>().ReverseMap();
 
-            CreateMap<Property, PropertyDTO>()
-                .ForMember(x => x.CreateDate, s => s.MapFrom(d => d.CreateDate.ToShamsi()))
-                .ForMember(x => x.ModifyDate, s => s.MapFrom(d => d.ModifyDate.ToShamsi()));
+            //CreateMap<PropertyDTO, Property>()
+            //    .ForMember(x => x.CreateDate, s => s.MapFrom(d => d.CreateDate.ToMiladi()))
+            //    .ForMember(x => x.ModifyDate, s => s.MapFrom(d => d.ModifyDate.ToMiladi()));
+
+            //CreateMap<Property, PropertyDTO>()
+            //    .ForMember(x => x.CreateDate, s => s.MapFrom(d => d.CreateDate.ToShamsi()))
+            //    .ForMember(x => x.ModifyDate, s => s.MapFrom(d => d.ModifyDate.ToShamsi()));
 
         }
 
